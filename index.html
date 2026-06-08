@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INBLINK Agency | Ecommerce Growth Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --bg2: #ffffff;
+    --dark: #0f0f0f;
+    --dark2: #1a1a1a;
+    --accent: #e85d26;
+    --accent2: #f07940;
+    --green: #2d7a4f;
+    --text: #2a2a2a;
+    --text-dim: #6b6b6b;
+    --text-faint: #aaaaaa;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --display: 'Syne', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 200;
+    background: rgba(245,243,239,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border2);
+  }
+  .nav-inner {
+    max-width: 1160px; margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-weight: 800; font-size: 20px;
+    color: var(--dark); text-decoration: none; letter-spacing: -0.03em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500;
+    color: var(--text-dim); text-decoration: none;
+    transition: color 0.2s; letter-spacing: 0.01em;
+  }
+  .nav-links a:hover { color: var(--dark); }
+  .nav-cta {
+    background: var(--dark); color: #fff !important;
+    padding: 0.5rem 1.2rem; border-radius: 50px;
+    font-size: 13px !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 1160px; margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--border2);
+    border-radius: 50px; padding: 6px 14px;
+    font-size: 12px; font-weight: 500; color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    font-weight: 800; line-height: 1.02;
+    letter-spacing: -0.04em; color: var(--dark);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-desc {
+    font-size: 16px; line-height: 1.75;
+    color: var(--text-dim); max-width: 460px;
+    margin-bottom: 2rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--body);
+    font-size: 14px; font-weight: 500;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px; cursor: pointer;
+    text-decoration: none; display: inline-flex;
+    align-items: center; gap: 8px; transition: all 0.22s;
+    border: none;
+  }
+  .btn-dark { background: var(--dark); color: #fff; }
+  .btn-dark:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--dark); border: 1.5px solid var(--border2); }
+  .btn-outline:hover { border-color: var(--dark); background: var(--dark); color: #fff; }
+
+  /* Hero right — stat card stack */
+  .hero-visual { display: flex; flex-direction: column; gap: 1rem; }
+  .hero-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.4rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .stat-card.accent-card {
+    background: var(--dark); color: #fff;
+  }
+  .stat-val {
+    font-family: var(--display);
+    font-size: 2.2rem; font-weight: 800;
+    color: var(--dark); letter-spacing: -0.04em;
+    line-height: 1; margin-bottom: 4px;
+  }
+  .stat-card.accent-card .stat-val { color: var(--accent2); }
+  .stat-label { font-size: 12px; color: var(--text-dim); font-weight: 400; }
+  .stat-card.accent-card .stat-label { color: rgba(255,255,255,0.55); }
+  .stat-trend {
+    font-size: 11px; font-weight: 500;
+    color: var(--green); margin-top: 4px;
+    display: flex; align-items: center; gap: 3px;
+  }
+
+  /* ── STRIP / LOGOS ── */
+  .strip {
+    background: var(--dark);
+    padding: 1rem 0; overflow: hidden;
+    display: flex; gap: 0;
+  }
+  .strip-inner {
+    display: flex; gap: 3rem; align-items: center;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap; padding-left: 2rem;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .strip-item {
+    font-family: var(--display);
+    font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .strip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+  /* ── SECTIONS ── */
+  .section { max-width: 1160px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent); }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em; color: var(--dark);
+    margin-bottom: 0.75rem;
+  }
+  .section-sub {
+    font-size: 15px; color: var(--text-dim);
+    max-width: 560px; line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem;
+    transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent); transform: scaleX(0);
+    transform-origin: left; transition: transform 0.3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .service-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--bg); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; margin-bottom: 1.1rem;
+  }
+  .service-card.dark-card { background: var(--dark); border-color: transparent; }
+  .service-card.dark-card .service-title { color: #fff; }
+  .service-card.dark-card .service-desc { color: rgba(255,255,255,0.5); }
+  .service-card.dark-card .service-icon { background: rgba(255,255,255,0.08); }
+  .service-title {
+    font-family: var(--display);
+    font-size: 16px; font-weight: 700;
+    color: var(--dark); margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .service-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+  .service-tag {
+    font-size: 10px; font-weight: 500;
+    background: var(--bg); border: 1px solid var(--border2);
+    padding: 3px 9px; border-radius: 50px;
+    color: var(--text-dim); letter-spacing: 0.03em;
+  }
+  .service-card.dark-card .service-tag { background: rgba(255,255,255,0.08); border-color: transparent; color: rgba(255,255,255,0.5); }
+
+  /* ── PORTFOLIO / WORK SECTION ── */
+  .work-section { background: var(--dark); padding: 5rem 0; }
+  .work-inner { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+  .work-inner .section-label { color: var(--accent2); }
+  .work-inner .section-label::before { background: var(--accent2); }
+  .work-inner .section-title { color: #fff; }
+  .work-inner .section-sub { color: rgba(255,255,255,0.45); }
+
+  /* Category tabs */
+  .work-tabs { display: flex; gap: 0.6rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .work-tab {
+    font-size: 12px; font-weight: 600;
+    padding: 0.5rem 1.2rem; border-radius: 50px;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.45); background: transparent;
+    transition: all 0.2s; letter-spacing: 0.04em;
+  }
+  .work-tab.active, .work-tab:hover {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* Project gallery grid */
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .work-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius); overflow: hidden;
+    transition: all 0.25s; cursor: default;
+    display: flex; flex-direction: column;
+  }
+  .work-card:hover { border-color: rgba(232,93,38,0.4); transform: translateY(-4px); }
+  .work-card.wide { grid-column: span 2; }
+  .work-img {
+    width: 100%; aspect-ratio: 16/9;
+    object-fit: cover; object-position: top;
+    display: block; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .work-card.tall .work-img { aspect-ratio: 4/3; }
+  .work-card.wide .work-img { aspect-ratio: 21/9; }
+  .work-info { padding: 1.1rem 1.2rem; flex: 1; }
+  .work-cat {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent2);
+    margin-bottom: 5px;
+  }
+  .work-name {
+    font-family: var(--display);
+    font-size: 14px; font-weight: 700; color: #fff;
+    letter-spacing: -0.01em; margin-bottom: 4px;
+  }
+  .work-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.55; }
+
+  /* ── PROCESS ── */
+  .process-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .process-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem;
+    position: relative;
+  }
+  .process-num {
+    font-family: var(--display);
+    font-size: 3rem; font-weight: 800;
+    color: var(--bg); letter-spacing: -0.05em;
+    position: absolute; top: 1rem; right: 1.2rem;
+    line-height: 1; pointer-events: none;
+  }
+  .process-title {
+    font-family: var(--display);
+    font-size: 15px; font-weight: 700;
+    color: var(--dark); margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .process-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+
+  /* ── WHY US ── */
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .why-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem;
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    transition: all 0.22s;
+  }
+  .why-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(232,93,38,0.08); }
+  .why-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #fff0ea; display: flex; align-items: center;
+    justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .why-title {
+    font-family: var(--display);
+    font-size: 15px; font-weight: 700;
+    color: var(--dark); margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .why-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+
+  /* ── PLATFORMS ── */
+  .platforms-row {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .platform-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--border2);
+    border-radius: 50px; padding: 0.5rem 1.1rem;
+    font-size: 13px; font-weight: 500; color: var(--dark);
+    transition: all 0.2s;
+  }
+  .platform-badge:hover { border-color: var(--accent); color: var(--accent); }
+  .platform-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--accent); padding: 5rem 2rem;
+    text-align: center;
+  }
+  .cta-inner { max-width: 680px; margin: 0 auto; }
+  .cta-title {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; color: #fff;
+    letter-spacing: -0.04em; line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+  .cta-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 2rem; line-height: 1.6; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--accent); font-weight: 600; }
+  .btn-white:hover { background: var(--dark); color: #fff; transform: translateY(-1px); }
+  .btn-ghost-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
+  .btn-ghost-white:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark2); padding: 3rem 2rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1160px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 2rem; margin-bottom: 1.5rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--display);
+    font-size: 22px; font-weight: 800;
+    color: #fff; letter-spacing: -0.03em;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom {
+    max-width: 1160px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: rgba(255,255,255,0.25);
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .work-grid { grid-template-columns: 1fr 1fr; }
+    .work-card.wide { grid-column: span 2; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+  }
+  @media(max-width: 600px) {
+    .services-grid, .work-grid, .process-grid { grid-template-columns: 1fr; }
+    .work-card.wide { grid-column: span 1; }
+    .nav-links { display: none; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .section { padding: 3.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">INB<span>LINK</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="top">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Ecommerce Growth Agency
+      </div>
+      <h1>Grow Your<br><em>Ecommerce</em><br>Revenue.</h1>
+      <p class="hero-desc">
+        INBLINK Agency helps Shopify brands and Amazon sellers optimize, scale, and automate their digital commerce operations — combining strategy, AI tools, and conversion-focused execution.
+      </p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-dark">View Our Work ↓</a>
+        <a href="#contact" class="btn btn-outline">Free Consultation</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stats-grid">
+        <div class="stat-card accent-card">
+          <div class="stat-val">170+</div>
+          <div class="stat-label">Projects Delivered</div>
+          <div class="stat-trend">↑ Shopify & Amazon</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">$94K+</div>
+          <div class="stat-label">Client Revenue Managed</div>
+          <div class="stat-trend">↑ Verified Results</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">47%</div>
+          <div class="stat-label">Avg Returning Customer Rate</div>
+          <div class="stat-trend">↑ Retention Focus</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">5★</div>
+          <div class="stat-label">Client Satisfaction</div>
+          <div class="stat-trend">↑ Fiverr & Upwork</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="strip-dot"></span> Shopify Store Setup</div>
+    <div class="strip-item"><span class="strip-dot"></span> Conversion Rate Optimization</div>
+    <div class="strip-item"><span class="strip-dot"></span> Amazon Listing Optimization</div>
+    <div class="strip-item"><span class="strip-dot"></span> Klaviyo Email Marketing</div>
+    <div class="strip-item"><span class="strip-dot"></span> AI-Powered Automation</div>
+    <div class="strip-item"><span class="strip-dot"></span> Inventory Management</div>
+    <div class="strip-item"><span class="strip-dot"></span> Shopify Store Setup</div>
+    <div class="strip-item"><span class="strip-dot"></span> Conversion Rate Optimization</div>
+    <div class="strip-item"><span class="strip-dot"></span> Amazon Listing Optimization</div>
+    <div class="strip-item"><span class="strip-dot"></span> Klaviyo Email Marketing</div>
+    <div class="strip-item"><span class="strip-dot"></span> AI-Powered Automation</div>
+    <div class="strip-item"><span class="strip-dot"></span> Inventory Management</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Full-Spectrum<br>Ecommerce Services</h2>
+    <p class="section-sub">From store setup to scaling — we handle every layer of your ecommerce growth stack.</p>
+    <div class="services-grid">
+
+      <div class="service-card dark-card">
+        <div class="service-icon">🛒</div>
+        <div class="service-title">Shopify Store Setup & Optimization</div>
+        <div class="service-desc">Complete Shopify store creation, theme configuration, product setup, navigation, and launch support. Homepage and product page optimization focused on conversion.</div>
+        <div class="service-tags">
+          <span class="service-tag">Store Setup</span>
+          <span class="service-tag">Theme Config</span>
+          <span class="service-tag">CRO</span>
+          <span class="service-tag">Mobile UX</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📧</div>
+        <div class="service-title">Email Marketing & Retention</div>
+        <div class="service-desc">Klaviyo-powered email flows — abandoned cart recovery, welcome sequences, post-purchase automation, win-back campaigns, and segmented newsletters to maximize LTV.</div>
+        <div class="service-tags">
+          <span class="service-tag">Klaviyo</span>
+          <span class="service-tag">Abandoned Cart</span>
+          <span class="service-tag">Automation</span>
+          <span class="service-tag">Segmentation</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⭐</div>
+        <div class="service-title">Reviews & Trust Building</div>
+        <div class="service-desc">Judge.me review system setup — automated review requests, photo reviews, homepage widgets, and trust signal implementation that convert browsers into buyers.</div>
+        <div class="service-tags">
+          <span class="service-tag">Judge.me</span>
+          <span class="service-tag">Social Proof</span>
+          <span class="service-tag">Auto Requests</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <div class="service-title">Amazon Marketplace Services</div>
+        <div class="service-desc">Amazon listing optimization, keyword research, title and bullet point writing, backend search terms, catalog management, and brand storefront strategy.</div>
+        <div class="service-tags">
+          <span class="service-tag">Listing Optimization</span>
+          <span class="service-tag">Keyword Research</span>
+          <span class="service-tag">Catalog Mgmt</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-title">Conversion Rate Optimization</div>
+        <div class="service-desc">Store audits, product page analysis, customer journey mapping, trust signal implementation, checkout improvements — more sales without increasing ad spend.</div>
+        <div class="service-tags">
+          <span class="service-tag">Store Audit</span>
+          <span class="service-tag">Checkout CX</span>
+          <span class="service-tag">A/B Strategy</span>
+        </div>
+      </div>
+
+      <div class="service-card dark-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-title">AI-Powered Ecommerce</div>
+        <div class="service-desc">AI-generated product descriptions, email content, SEO copy, store audit reports, and conversion recommendations — faster output, consistent quality, scalable execution.</div>
+        <div class="service-tags">
+          <span class="service-tag">AI Content</span>
+          <span class="service-tag">SEO Copy</span>
+          <span class="service-tag">Automation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO / WORK -->
+<div id="work" class="work-section">
+  <div class="work-inner">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title" style="color:#fff;">Real Work.<br>Real Results.</h2>
+    <p class="section-sub">A selection of Shopify stores, Amazon projects, and analytics dashboards delivered for clients.</p>
+
+    <div class="work-tabs">
+      <button class="work-tab active">All</button>
+      <button class="work-tab">Shopify Stores</button>
+      <button class="work-tab">Analytics & Reports</button>
+      <button class="work-tab">Amazon</button>
+      <button class="work-tab">Inventory</button>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- Shopify stores — img11, img12 -->
+      <div class="work-card wide">
+        <img class="work-img" src="img11.png" alt="Shaista Jewelry Shopify Store" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Shopify Store</div>
+          <div class="work-name">Shaista Jewelry — Luxury Fashion Store</div>
+          <div class="work-desc">Full Shopify setup with premium theme, jewelry collections, and high-conversion product pages.</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <img class="work-img" src="img12.png" alt="Angan Shopify Store" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Shopify Store</div>
+          <div class="work-name">ANGAN — Embroidered Fashion</div>
+          <div class="work-desc">Pakistani fashion ecommerce store with free shipping announcement bar, clean navigation, and mobile UX.</div>
+        </div>
+      </div>
+
+      <!-- Shopify product page — img5 -->
+      <div class="work-card">
+        <img class="work-img" src="img5.jpg" alt="Flakes Shopify Product Page" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Product Page CRO</div>
+          <div class="work-name">Flakes — Subscription Product Page</div>
+          <div class="work-desc">High-converting product page with subscription upsell, trust signals, and bundle options.</div>
+        </div>
+      </div>
+
+      <!-- Shopify Analytics dashboards — img1, img2 -->
+      <div class="work-card wide">
+        <img class="work-img" src="img1.jpg" alt="Shopify Dashboard Analytics" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Analytics & Reporting</div>
+          <div class="work-name">Shopify Dashboard — 45K Transactions</div>
+          <div class="work-desc">Full store analytics setup: revenue funnel (34.5% conversion rate), net sales tracking, and quarterly goal monitoring.</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <img class="work-img" src="img2.jpg" alt="Shopify Overview Dashboard" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Analytics & Growth</div>
+          <div class="work-name">Store Growth — $137K Sales, 1,046% ↑</div>
+          <div class="work-desc">Month-over-month tracking with 93K sessions and 438% session growth for a scaling brand.</div>
+        </div>
+      </div>
+
+      <!-- Finance overview — img3 -->
+      <div class="work-card">
+        <img class="work-img" src="img3.jpg" alt="Finance Overview Dashboard" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Finance Reporting</div>
+          <div class="work-name">Annual Finance Overview — $94K Revenue</div>
+          <div class="work-desc">Full-year financial reporting: gross sales, net sales, AOV, MER, COGS, and gross margin tracking.</div>
+        </div>
+      </div>
+
+      <!-- Traffic dashboard — img4 -->
+      <div class="work-card wide">
+        <img class="work-img" src="img4.jpg" alt="Shopify Traffic Dashboard" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Traffic Analytics</div>
+          <div class="work-name">Store Traffic Dashboard — $788K Total Sales</div>
+          <div class="work-desc">Detailed funnel tracking: 50K views, 14K sessions, 7K add-to-carts, and monthly breakdown table.</div>
+        </div>
+      </div>
+
+      <!-- Shopify Reports — img7 -->
+      <div class="work-card">
+        <img class="work-img" src="img7.jpg" alt="Shopify Reports" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Shopify Analytics</div>
+          <div class="work-name">Custom Reports & Cohort Analysis</div>
+          <div class="work-desc">Inventory reports, cohort analysis setup, and custom reporting dashboards inside Shopify admin.</div>
+        </div>
+      </div>
+
+      <!-- Amazon — img10 -->
+      <div class="work-card">
+        <img class="work-img" src="img10.jpg" alt="Amazon Product Listing" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Amazon Listing</div>
+          <div class="work-name">Amazon Product Optimization</div>
+          <div class="work-desc">SEO-optimized product title, bullet points, description, and imagery strategy for Amazon marketplace.</div>
+        </div>
+      </div>
+
+      <!-- Inventory — img6, img8, img9 -->
+      <div class="work-card">
+        <img class="work-img" src="img6.jpg" alt="Amazon Inventory Dashboard" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Inventory Management</div>
+          <div class="work-name">Amazon Multi-Channel Inventory — 20K+ Listings</div>
+          <div class="work-desc">Cross-marketplace inventory tracking across Amazon, Walmart, and Jet with profit and ROI analysis.</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <img class="work-img" src="img8.jpg" alt="Stock Taking Dashboard" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Inventory Management</div>
+          <div class="work-name">Shopify Stock Taking & Reconciliation</div>
+          <div class="work-desc">Real-time stock count, mismatch detection, and barcode scanning integration for warehouse operations.</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <img class="work-img" src="img9.jpg" alt="Inventory Planner" loading="lazy">
+        <div class="work-info">
+          <div class="work-cat">Inventory Planning</div>
+          <div class="work-name">BR Inventory Planner — 2118 Variants</div>
+          <div class="work-desc">Smart reorder recommendations, weeks-of-stock tracking, and critical stock alerts for fashion brand.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section">
+    <div class="section-label">How We Work</div>
+    <h2 class="section-title">Simple 4-Step<br>Process</h2>
+    <p class="section-sub">From first conversation to live results — here's exactly how we work with every client.</p>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <div class="process-title">Discovery Call</div>
+        <div class="process-desc">We start with a free consultation to understand your business, goals, current challenges, and what success looks like for you.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <div class="process-title">Audit & Strategy</div>
+        <div class="process-desc">We audit your store or listings and build a tailored growth plan — identifying the highest-impact areas to fix and optimize first.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <div class="process-title">Execution</div>
+        <div class="process-desc">Our team implements everything — store setup, email flows, listing optimization, or automation — with clear timelines and updates.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <div class="process-title">Optimize & Scale</div>
+        <div class="process-desc">After launch we monitor performance, test improvements, and iterate — ensuring your results compound over time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="about" style="background:#fff; padding: 5rem 0;">
+  <div class="section">
+    <div class="section-label">Why INBLINK</div>
+    <h2 class="section-title">Built for Ecommerce.<br>Focused on Growth.</h2>
+    <p class="section-sub">We're not a generalist agency. Every service we offer is purpose-built for Shopify and Amazon brands.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div>
+          <div class="why-title">Ecommerce-Only Expertise</div>
+          <div class="why-desc">100% focused on Shopify and Amazon — no diluted generalist work. Every team member specializes in ecommerce growth.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div>
+          <div class="why-title">AI-Powered Workflows</div>
+          <div class="why-desc">We leverage advanced AI tools for content, audits, and optimization — delivering faster results without sacrificing quality.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <div>
+          <div class="why-title">Conversion-First Approach</div>
+          <div class="why-desc">Every decision is driven by one goal: increasing your revenue. We optimize for sales, not just traffic or aesthetics.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <div>
+          <div class="why-title">Long-Term Partnership</div>
+          <div class="why-desc">We don't disappear after delivery. We're available for ongoing support, iterations, and scaling as your business grows.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div>
+          <div class="why-title">Affordable for Growing Brands</div>
+          <div class="why-desc">Enterprise-level strategy and execution at pricing that works for startups, small brands, and growing DTC businesses.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <div>
+          <div class="why-title">Global Client Base</div>
+          <div class="why-desc">We've delivered projects for brands worldwide — working across time zones with fast communication and reliable delivery.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platforms -->
+    <div style="margin-top: 3rem;">
+      <div class="section-label">Platforms We Serve</div>
+      <div class="platforms-row">
+        <div class="platform-badge"><span class="platform-dot" style="background:#96bf48"></span> Shopify</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#ff9900"></span> Amazon</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#3b5998"></span> Fiverr</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#6fda44"></span> Upwork</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#7c5cbf"></span> Klaviyo</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#eb4b27"></span> Judge.me</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#999"></span> WooCommerce (Soon)</div>
+        <div class="platform-badge"><span class="platform-dot" style="background:#f1641e"></span> Etsy (Soon)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="contact" class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to Grow Your Ecommerce Revenue?</h2>
+    <p class="cta-sub">Book a free consultation and let's build a growth plan tailored to your Shopify store or Amazon listings.</p>
+    <div class="cta-btns">
+      <a href="mailto:hello@inblink.agency" class="btn btn-white">📩 Contact Us</a>
+      <a href="https://www.fiverr.com" target="_blank" class="btn btn-ghost-white">View on Fiverr ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">INB<span>LINK</span> <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.3);font-family:var(--body)">Agency</span></div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 INBLINK Agency · Ecommerce Growth • Shopify Optimization • Amazon Marketplace Solutions</span>
+    <span>Built for brands that want to scale.</span>
+  </div>
+</footer>
+
+<script>
+// Tab filter (visual only — shows active state)
+document.querySelectorAll('.work-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.work-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
