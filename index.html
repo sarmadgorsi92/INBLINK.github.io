@@ -102,6 +102,13 @@
     font-weight: 800;
     color: white;
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    overflow: hidden;
+  }
+
+  .brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .brand-text {
@@ -338,12 +345,9 @@
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
-    background: var(--bg-secondary);
-    padding: 2rem;
+    object-fit: cover;
     position: relative;
     z-index: 1;
-    text-align: center;
-    font-size: 100px;
   }
 
   /* ────── MARQUEE ────── */
@@ -507,14 +511,14 @@
     font-weight: 500;
   }
 
-  /* ────── PORTFOLIO ────── */
+  /* ────── PORTFOLIO ─��──── */
   .portfolio-section {
     background: var(--bg-secondary);
   }
 
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
 
@@ -524,6 +528,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
   }
 
   .portfolio-card:hover {
@@ -540,10 +546,19 @@
     justify-content: center;
     font-size: 3rem;
     color: var(--text-tertiary);
+    overflow: hidden;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .portfolio-info {
     padding: 1.5rem;
+    flex: 1;
   }
 
   .portfolio-category {
@@ -569,7 +584,7 @@
     line-height: 1.6;
   }
 
-  /* ────── CTA SECTION ���───── */
+  /* ────── CTA SECTION ────── */
   .cta-section {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     padding: 4rem 2rem;
@@ -808,7 +823,7 @@
     }
 
     .hero-image {
-      max-width: 300px;
+      max-width: 100%;
     }
 
     .contact-grid {
@@ -897,7 +912,7 @@
   </div>
 
   <div class="hero-visual">
-    <div class="hero-image">🛍️</div>
+    <img src="img11.png" alt="INBLINK Agency Showcase" class="hero-image">
   </div>
 </section>
 
@@ -1002,56 +1017,134 @@
 
   <div class="portfolio-grid">
     <div class="portfolio-card">
-      <div class="portfolio-image">🎨</div>
-      <div class="portfolio-info">
-        <div class="portfolio-category">Shopify Store</div>
-        <h4 class="portfolio-title">Luxury Fashion Store</h4>
-        <p class="portfolio-desc">Complete store redesign with high-conversion product pages.</p>
+      <div class="portfolio-image">
+        <img src="img1.jpg" alt="Shopify Dashboard Analytics">
       </div>
-    </div>
-
-    <div class="portfolio-card">
-      <div class="portfolio-image">📈</div>
       <div class="portfolio-info">
         <div class="portfolio-category">Analytics</div>
         <h4 class="portfolio-title">Sales Dashboard</h4>
-        <p class="portfolio-desc">Custom reporting dashboard tracking $788K in sales.</p>
+        <p class="portfolio-desc">Complete analytics setup with 45K transactions tracked.</p>
       </div>
     </div>
 
     <div class="portfolio-card">
-      <div class="portfolio-image">🏆</div>
+      <div class="portfolio-image">
+        <img src="img2.jpg" alt="Store Growth Analytics">
+      </div>
       <div class="portfolio-info">
-        <div class="portfolio-category">Amazon</div>
-        <h4 class="portfolio-title">Marketplace Optimization</h4>
-        <p class="portfolio-desc">Optimized listings with 200% increase in visibility.</p>
+        <div class="portfolio-category">Growth</div>
+        <h4 class="portfolio-title">$137K Sales Growth</h4>
+        <p class="portfolio-desc">1,046% month-over-month growth tracking.</p>
       </div>
     </div>
 
     <div class="portfolio-card">
-      <div class="portfolio-image">📊</div>
+      <div class="portfolio-image">
+        <img src="img3.jpg" alt="Finance Overview">
+      </div>
       <div class="portfolio-info">
-        <div class="portfolio-category">Analytics</div>
-        <h4 class="portfolio-title">Growth Analytics</h4>
-        <p class="portfolio-desc">Month-over-month tracking with 438% session growth.</p>
+        <div class="portfolio-category">Finance</div>
+        <h4 class="portfolio-title">Annual Report</h4>
+        <p class="portfolio-desc">Full-year financial reporting with $94K revenue.</p>
       </div>
     </div>
 
     <div class="portfolio-card">
-      <div class="portfolio-image">💳</div>
+      <div class="portfolio-image">
+        <img src="img4.jpg" alt="Traffic Dashboard">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Traffic</div>
+        <h4 class="portfolio-title">Store Traffic Analysis</h4>
+        <p class="portfolio-desc">$788K total sales with detailed funnel tracking.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img5.jpg" alt="Product Page CRO">
+      </div>
       <div class="portfolio-info">
         <div class="portfolio-category">Conversion</div>
         <h4 class="portfolio-title">Subscription Page</h4>
-        <p class="portfolio-desc">High-converting product page with 34% lift in AOV.</p>
+        <p class="portfolio-desc">High-converting product page with upsell options.</p>
       </div>
     </div>
 
     <div class="portfolio-card">
-      <div class="portfolio-image">📦</div>
+      <div class="portfolio-image">
+        <img src="img6.jpg" alt="Inventory Dashboard">
+      </div>
       <div class="portfolio-info">
         <div class="portfolio-category">Inventory</div>
-        <h4 class="portfolio-title">Inventory System</h4>
-        <p class="portfolio-desc">Multi-channel inventory management for 20K+ SKUs.</p>
+        <h4 class="portfolio-title">Multi-Channel Inventory</h4>
+        <p class="portfolio-desc">20K+ SKUs managed across platforms.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img7.jpg" alt="Custom Reports">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Reporting</div>
+        <h4 class="portfolio-title">Custom Reports</h4>
+        <p class="portfolio-desc">Cohort analysis and inventory reporting setup.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img8.jpg" alt="Stock Taking">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Operations</div>
+        <h4 class="portfolio-title">Stock Management</h4>
+        <p class="portfolio-desc">Real-time inventory with barcode integration.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img9.jpg" alt="Inventory Planner">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Planning</div>
+        <h4 class="portfolio-title">Inventory Planner</h4>
+        <p class="portfolio-desc">Smart reorder recommendations for 2118 variants.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img10.jpg" alt="Amazon Listing">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Amazon</div>
+        <h4 class="portfolio-title">Marketplace Optimization</h4>
+        <p class="portfolio-desc">SEO-optimized product listings for Amazon.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img11.png" alt="Luxury Fashion Store">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Shopify</div>
+        <h4 class="portfolio-title">Luxury Fashion Store</h4>
+        <p class="portfolio-desc">Premium store with high-conversion product pages.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img12.png" alt="Fashion Ecommerce">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Shopify</div>
+        <h4 class="portfolio-title">Fashion Ecommerce</h4>
+        <p class="portfolio-desc">Responsive store with clean navigation and UX.</p>
       </div>
     </div>
   </div>
