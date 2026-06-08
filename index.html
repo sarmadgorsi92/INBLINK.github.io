@@ -4,1130 +4,1214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INBLINK Agency | Ecommerce Growth Partner</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f5f3ef;
-    --bg2: #ffffff;
-    --dark: #0f0f0f;
-    --dark2: #1a1a1a;
-    --accent: #e85d26;
-    --accent2: #f07940;
-    --green: #2d7a4f;
-    --text: #2a2a2a;
-    --text-dim: #6b6b6b;
-    --text-faint: #aaaaaa;
-    --border: rgba(0,0,0,0.08);
-    --border2: rgba(0,0,0,0.14);
-    --display: 'Syne', sans-serif;
-    --body: 'DM Sans', sans-serif;
-    --radius: 12px;
+    --primary: #FF6B35;
+    --primary-dark: #E85A2A;
+    --secondary: #004E89;
+    --accent: #1AC8ED;
+    --success: #06A77D;
+    
+    /* Light Mode */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-tertiary: #EEF0F5;
+    --text-primary: #0F1419;
+    --text-secondary: #4A5568;
+    --text-tertiary: #718096;
+    --border-color: #E2E8F0;
+    
+    --card-bg: #FFFFFF;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.1);
   }
 
   html.dark-mode {
-    --bg: #0f0f0f;
-    --bg2: #1a1a1a;
-    --dark: #ffffff;
-    --dark2: #2a2a2a;
-    --accent: #f07940;
-    --accent2: #e85d26;
-    --text: #f5f5f5;
-    --text-dim: #b0b0b0;
-    --text-faint: #707070;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.14);
+    --bg-primary: #0F1419;
+    --bg-secondary: #1a202c;
+    --bg-tertiary: #2d3748;
+    --text-primary: #F7FAFC;
+    --text-secondary: #E2E8F0;
+    --text-tertiary: #A0AEC0;
+    --border-color: #2d3748;
+    
+    --card-bg: #1a202c;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.5);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+
+  html { 
+    scroll-behavior: smooth; 
+  }
 
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
   }
 
-  /* ── NAV ── */
+  /* ────── NAVIGATION ────── */
   nav {
-    position: sticky; top: 0; z-index: 200;
-    background: rgba(245,243,239,0.95);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border2);
-    transition: background 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
   }
 
-  html.dark-mode nav {
-    background: rgba(15,15,15,0.95);
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
-  .nav-inner {
-    max-width: 1160px; margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex; align-items: center; justify-content: space-between;
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    flex-shrink: 0;
   }
 
-  .nav-left {
-    display: flex; align-items: center; gap: 0.8rem;
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
   }
 
-  .nav-logo {
-    font-family: var(--display);
-    font-weight: 800; font-size: 20px;
-    color: var(--dark); text-decoration: none; letter-spacing: -0.03em;
-    display: flex; align-items: center; gap: 8px;
+  .brand-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
   }
 
-  .nav-logo-img {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; font-weight: 700; color: #fff;
+  .brand-text .highlight {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .nav-logo span { color: var(--accent); }
-
-  .nav-right {
-    display: flex; align-items: center; gap: 1.5rem;
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex: 1;
+    list-style: none;
   }
 
-  .theme-toggle {
-    background: transparent;
-    border: 1.5px solid var(--border2);
-    border-radius: 50px;
-    padding: 0.5rem 0.8rem;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex; align-items: center; gap: 6px;
-    transition: all 0.2s;
-    color: var(--text-dim);
-  }
-
-  .theme-toggle:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .theme-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: none;
-  }
-
-  @media(min-width: 768px) {
-    .theme-label { display: inline; }
-  }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-  .nav-links a {
-    font-size: 13px; font-weight: 500;
-    color: var(--text-dim); text-decoration: none;
-    transition: color 0.2s; letter-spacing: 0.01em;
-  }
-  .nav-links a:hover { color: var(--dark); }
-  .nav-cta {
-    background: var(--dark); color: #fff !important;
-    padding: 0.5rem 1.2rem; border-radius: 50px;
-    font-size: 13px !important;
-  }
-  .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
-
-  /* ── HERO ── */
-  .hero {
-    max-width: 1160px; margin: 0 auto;
-    padding: 5rem 2rem 4rem;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #fff; border: 1px solid var(--border2);
-    border-radius: 50px; padding: 6px 14px;
-    font-size: 12px; font-weight: 500; color: var(--text-dim);
-    margin-bottom: 1.5rem;
-  }
-
-  html.dark-mode .hero-badge {
-    background: rgba(255,255,255,0.05);
-  }
-
-  .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-  .hero h1 {
-    font-family: var(--display);
-    font-size: clamp(3rem, 5.5vw, 5rem);
-    font-weight: 800; line-height: 1.02;
-    letter-spacing: -0.04em; color: var(--dark);
-    margin-bottom: 1.2rem;
-  }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero-desc {
-    font-size: 16px; line-height: 1.75;
-    color: var(--text-dim); max-width: 460px;
-    margin-bottom: 2rem;
-  }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    font-family: var(--body);
-    font-size: 14px; font-weight: 500;
-    padding: 0.75rem 1.75rem;
-    border-radius: 50px; cursor: pointer;
-    text-decoration: none; display: inline-flex;
-    align-items: center; gap: 8px; transition: all 0.22s;
-    border: none;
-  }
-  .btn-dark { background: var(--dark); color: #fff; }
-  .btn-dark:hover { background: var(--accent); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--dark); border: 1.5px solid var(--border2); }
-  .btn-outline:hover { border-color: var(--dark); background: var(--dark); color: #fff; }
-
-  /* Hero right — stat card stack */
-  .hero-visual { display: flex; flex-direction: column; gap: 1rem; }
-  .hero-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stat-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.4rem 1.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  html.dark-mode .stat-card {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  }
-
-  .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-  .stat-card.accent-card {
-    background: var(--dark); color: #fff;
-  }
-  .stat-val {
-    font-family: var(--display);
-    font-size: 2.2rem; font-weight: 800;
-    color: var(--dark); letter-spacing: -0.04em;
-    line-height: 1; margin-bottom: 4px;
-  }
-  .stat-card.accent-card .stat-val { color: var(--accent2); }
-  .stat-label { font-size: 12px; color: var(--text-dim); font-weight: 400; }
-  .stat-card.accent-card .stat-label { color: rgba(255,255,255,0.55); }
-  .stat-trend {
-    font-size: 11px; font-weight: 500;
-    color: var(--green); margin-top: 4px;
-    display: flex; align-items: center; gap: 3px;
-  }
-
-  /* ── STRIP / LOGOS ── */
-  .strip {
-    background: var(--dark);
-    padding: 1rem 0; overflow: hidden;
-    display: flex; gap: 0;
-  }
-  .strip-inner {
-    display: flex; gap: 3rem; align-items: center;
-    animation: marquee 20s linear infinite;
-    white-space: nowrap; padding-left: 2rem;
-  }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .strip-item {
-    font-family: var(--display);
-    font-size: 13px; font-weight: 600;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .strip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
-  /* ── SECTIONS ── */
-  .section { max-width: 1160px; margin: 0 auto; padding: 5rem 2rem; }
-  .section-label {
-    font-family: var(--display);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 0.6rem;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent); }
-  .section-title {
-    font-family: var(--display);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 800; line-height: 1.1;
-    letter-spacing: -0.03em; color: var(--dark);
-    margin-bottom: 0.75rem;
-  }
-  .section-sub {
-    font-size: 15px; color: var(--text-dim);
-    max-width: 560px; line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  /* ── SERVICES ── */
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-  .service-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.75rem;
-    transition: all 0.25s; position: relative; overflow: hidden;
-  }
-
-  html.dark-mode .service-card {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
-  }
-
-  .service-card::before {
-    content: ''; position: absolute;
-    bottom: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent); transform: scaleX(0);
-    transform-origin: left; transition: transform 0.3s;
-  }
-  .service-card:hover::before { transform: scaleX(1); }
-  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-  .service-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--bg); display: flex; align-items: center;
-    justify-content: center; font-size: 22px; margin-bottom: 1.1rem;
-  }
-  .service-card.dark-card { background: var(--dark); border-color: transparent; }
-  .service-card.dark-card .service-title { color: #fff; }
-  .service-card.dark-card .service-desc { color: rgba(255,255,255,0.5); }
-  .service-card.dark-card .service-icon { background: rgba(255,255,255,0.08); }
-  .service-title {
-    font-family: var(--display);
-    font-size: 16px; font-weight: 700;
-    color: var(--dark); margin-bottom: 8px;
-    letter-spacing: -0.02em;
-  }
-  .service-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
-  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
-  .service-tag {
-    font-size: 10px; font-weight: 500;
-    background: var(--bg); border: 1px solid var(--border2);
-    padding: 3px 9px; border-radius: 50px;
-    color: var(--text-dim); letter-spacing: 0.03em;
-  }
-  .service-card.dark-card .service-tag { background: rgba(255,255,255,0.08); border-color: transparent; color: rgba(255,255,255,0.5); }
-
-  /* ── PORTFOLIO / WORK SECTION ── */
-  .work-section { background: var(--dark); padding: 5rem 0; }
-  .work-inner { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
-  .work-inner .section-label { color: var(--accent2); }
-  .work-inner .section-label::before { background: var(--accent2); }
-  .work-inner .section-title { color: #fff; }
-  .work-inner .section-sub { color: rgba(255,255,255,0.45); }
-
-  /* Category tabs */
-  .work-tabs { display: flex; gap: 0.6rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-  .work-tab {
-    font-size: 12px; font-weight: 600;
-    padding: 0.5rem 1.2rem; border-radius: 50px;
-    cursor: pointer; border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.45); background: transparent;
-    transition: all 0.2s; letter-spacing: 0.04em;
-  }
-  .work-tab.active, .work-tab:hover {
-    background: var(--accent); border-color: var(--accent);
-    color: #fff;
-  }
-
-  /* Project gallery grid */
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .work-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius); overflow: hidden;
-    transition: all 0.25s; cursor: default;
-    display: flex; flex-direction: column;
-  }
-  .work-card:hover { border-color: rgba(232,93,38,0.4); transform: translateY(-4px); }
-  .work-card.wide { grid-column: span 2; }
-  .work-img {
-    width: 100%; aspect-ratio: 16/9;
-    object-fit: cover; object-position: top;
-    display: block; border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .work-card.tall .work-img { aspect-ratio: 4/3; }
-  .work-card.wide .work-img { aspect-ratio: 21/9; }
-  .work-info { padding: 1.1rem 1.2rem; flex: 1; }
-  .work-cat {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--accent2);
-    margin-bottom: 5px;
-  }
-  .work-name {
-    font-family: var(--display);
-    font-size: 14px; font-weight: 700; color: #fff;
-    letter-spacing: -0.01em; margin-bottom: 4px;
-  }
-  .work-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.55; }
-
-  /* ── PROCESS ── */
-  .process-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-  }
-  .process-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.75rem;
+  .nav-menu a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
     position: relative;
   }
 
-  html.dark-mode .process-card {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
+  .nav-menu a:hover {
+    color: var(--primary);
   }
 
-  .process-num {
-    font-family: var(--display);
-    font-size: 3rem; font-weight: 800;
-    color: var(--bg); letter-spacing: -0.05em;
-    position: absolute; top: 1rem; right: 1.2rem;
-    line-height: 1; pointer-events: none;
-  }
-  .process-title {
-    font-family: var(--display);
-    font-size: 15px; font-weight: 700;
-    color: var(--dark); margin-bottom: 8px;
-    letter-spacing: -0.02em;
-  }
-  .process-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
-
-  /* ── WHY US ── */
-  .why-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-  .why-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.75rem;
-    display: flex; gap: 1.1rem; align-items: flex-start;
-    transition: all 0.22s;
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
   }
 
-  html.dark-mode .why-card {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
+  .nav-menu a:hover::after {
+    width: 100%;
   }
 
-  .why-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(232,93,38,0.08); }
-  .why-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: #fff0ea; display: flex; align-items: center;
-    justify-content: center; font-size: 20px; flex-shrink: 0;
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
   }
 
-  html.dark-mode .why-icon {
-    background: rgba(232,93,38,0.15);
+  .theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 44px;
+    height: 44px;
   }
 
-  .why-title {
-    font-family: var(--display);
-    font-size: 15px; font-weight: 700;
-    color: var(--dark); margin-bottom: 6px;
-    letter-spacing: -0.02em;
-  }
-  .why-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
-
-  /* ── PLATFORMS ── */
-  .platforms-row {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  .platform-badge {
-    display: flex; align-items: center; gap: 8px;
-    background: #fff; border: 1px solid var(--border2);
-    border-radius: 50px; padding: 0.5rem 1.1rem;
-    font-size: 13px; font-weight: 500; color: var(--dark);
-    transition: all 0.2s;
+  .theme-toggle:hover {
+    background: var(--bg-tertiary);
+    transform: scale(1.05);
   }
 
-  html.dark-mode .platform-badge {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
-    color: var(--dark);
+  .cta-button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white !important;
+    padding: 0.7rem 1.8rem;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
   }
 
-  .platform-badge:hover { border-color: var(--accent); color: var(--accent); }
-  .platform-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+  }
 
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--accent); padding: 5rem 2rem;
+  /* ────── HERO SECTION ────── */
+  .hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-content h1 .text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+  }
+
+  .btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .stat-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .stat-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    opacity: 0.1;
+    filter: blur(60px);
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
     text-align: center;
+    font-size: 100px;
   }
-  .cta-inner { max-width: 680px; margin: 0 auto; }
-  .cta-title {
-    font-family: var(--display);
+
+  /* ────── MARQUEE ────── */
+  .marquee {
+    background: var(--secondary);
+    padding: 2rem 0;
+    overflow: hidden;
+    margin: 3rem 0;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 3rem;
+    animation: scroll-marquee 30s linear infinite;
+    white-space: nowrap;
+    padding: 0 2rem;
+  }
+
+  @keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ────── SECTIONS ────── */
+  .section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--primary);
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
     font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800; color: #fff;
-    letter-spacing: -0.04em; line-height: 1.08;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
-  .cta-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 2rem; line-height: 1.6; }
-  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-white { background: #fff; color: var(--accent); font-weight: 600; }
-  .btn-white:hover { background: var(--dark); color: #fff; transform: translateY(-1px); }
-  .btn-ghost-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
-  .btn-ghost-white:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark2); padding: 3rem 2rem 2rem;
-  }
-  .footer-inner {
-    max-width: 1160px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding-bottom: 2rem; margin-bottom: 1.5rem;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-logo {
-    font-family: var(--display);
-    font-size: 22px; font-weight: 800;
-    color: #fff; letter-spacing: -0.03em;
-  }
-  .footer-logo span { color: var(--accent); }
-  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
-  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: #fff; }
-  .footer-bottom {
-    max-width: 1160px; margin: 0 auto;
-    display: flex; justify-content: space-between;
-    font-size: 12px; color: rgba(255,255,255,0.25);
-    flex-wrap: wrap; gap: 0.5rem;
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
   }
 
-  /* ── CONTACT ── */
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
-  .contact-cards { display:flex; flex-direction:column; gap:0.85rem; }
+  /* ────── SERVICES ────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--primary);
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .tag {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ────── PORTFOLIO ────── */
+  .portfolio-section {
+    background: var(--bg-secondary);
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .portfolio-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .portfolio-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--text-tertiary);
+  }
+
+  .portfolio-info {
+    padding: 1.5rem;
+  }
+
+  .portfolio-category {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ────── CTA SECTION ���───── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 4rem 2rem;
+  }
+
+  .cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .cta-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ────── CONTACT SECTION ────── */
+  .contact-section {
+    background: var(--bg-secondary);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
   .contact-card {
-    display:flex; align-items:center; gap:1rem;
-    background:#fff; border:1px solid var(--border);
-    border-radius:var(--radius); padding:1rem 1.25rem;
-    text-decoration:none; transition:all 0.22s;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
   }
 
-  html.dark-mode .contact-card {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.1);
+  .contact-card:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+    box-shadow: var(--card-shadow-hover);
   }
 
-  .contact-card:hover { border-color:var(--accent); transform:translateX(4px); box-shadow:0 4px 16px rgba(232,93,38,0.1); }
-  .contact-card-icon { width:42px; height:42px; border-radius:10px; background:#fff0ea; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
-
-  html.dark-mode .contact-card-icon {
-    background: rgba(232,93,38,0.15);
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+    color: white;
   }
 
-  .contact-card-body { flex:1; }
-  .contact-card-label { font-size:10px; font-weight:600; color:var(--text-faint); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2px; }
-  .contact-card-val { font-size:14px; font-weight:500; color:var(--dark); }
-  .contact-card-arrow { font-size:18px; color:var(--text-faint); transition:color 0.2s; }
-  .contact-card:hover .contact-card-arrow { color:var(--accent); }
-  .contact-info-box { background:var(--dark); border-radius:var(--radius); padding:2rem; position:sticky; top:80px; }
-  .contact-brand { font-family:var(--display); font-size:28px; font-weight:800; color:#fff; letter-spacing:-0.04em; margin-bottom:4px; }
-  .contact-brand span { color:var(--accent); }
-  .contact-tagline { font-size:12px; color:rgba(255,255,255,0.4); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.25rem; }
-  .contact-blurb { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7; margin-bottom:1.75rem; }
-  .contact-blurb strong { color:var(--accent2); }
-  .contact-hours { border-top:1px solid rgba(255,255,255,0.08); padding-top:1.25rem; }
-  .contact-hours-title { font-size:11px; font-weight:600; color:rgba(255,255,255,0.35); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.85rem; }
-  .contact-hours-row { display:flex; justify-content:space-between; align-items:center; padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; color:rgba(255,255,255,0.6); }
-  .contact-hours-row:last-child { border-bottom:none; }
-  .hours-val { font-weight:500; color:rgba(255,255,255,0.8); }
-
-  /* ── RESPONSIVE ── */
-  @media(max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 3rem; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .work-grid { grid-template-columns: 1fr 1fr; }
-    .work-card.wide { grid-column: span 2; }
-    .process-grid { grid-template-columns: 1fr 1fr; }
-    .why-grid, .contact-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+  .contact-content {
+    flex: 1;
   }
-  @media(max-width: 600px) {
-    .services-grid, .work-grid, .process-grid, .contact-grid { grid-template-columns: 1fr; }
-    .work-card.wide { grid-column: span 1; }
-    .hero { padding: 3rem 1.25rem 2.5rem; }
-    .section { padding: 3.5rem 1.25rem; }
+
+  .contact-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .contact-info {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  .contact-info h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-info-sub {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .contact-info-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .hours-list {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+  }
+
+  .hours-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hours-item:last-child {
+    border-bottom: none;
+  }
+
+  .hours-time {
+    font-weight: 600;
+  }
+
+  /* ────── FOOTER ────── */
+  footer {
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+  }
+
+  .footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-col h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-col a:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+  }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  /* ────── RESPONSIVE ────── */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .hero-image {
+      max-width: 300px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      position: relative;
+      top: 0;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .cta-section {
+      margin: 2rem 1.5rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
-  <div class="nav-inner">
-    <div class="nav-left">
-      <a class="nav-logo" href="#top">
-        <div class="nav-logo-img">📊</div>
-        <span>INB</span><span style="color: var(--accent);">LINK</span>
-      </a>
-    </div>
-    <ul class="nav-links" style="flex: 1;">
+  <div class="nav-container">
+    <a href="#" class="nav-brand">
+      <div class="brand-logo">📊</div>
+      <div class="brand-text">INB<span class="highlight">LINK</span></div>
+    </a>
+
+    <ul class="nav-menu">
       <li><a href="#services">Services</a></li>
-      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" title="Toggle dark/light theme">
-        <span id="themeIcon">🌙</span>
-        <span class="theme-label" id="themeLabel">Dark</span>
-      </button>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+      <a href="#contact" class="cta-button">Get Started</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div id="top">
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Ecommerce Growth Agency
-      </div>
-      <h1>Grow Your<br><em>Ecommerce</em><br>Revenue.</h1>
-      <p class="hero-desc">
-        INBLINK Agency helps Shopify brands and Amazon sellers optimize, scale, and automate their digital commerce operations — combining strategy, AI tools, and conversion-focused execution.
-      </p>
-      <div class="hero-ctas">
-        <a href="#work" class="btn btn-dark">View Our Work ↓</a>
-        <a href="#contact" class="btn btn-outline">Free Consultation</a>
-      </div>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Grow Your <span class="text-gradient">Ecommerce</span> Revenue</h1>
+    <p class="hero-desc">
+      INBLINK Agency helps Shopify brands and Amazon sellers optimize, scale, and automate their digital commerce operations with AI-powered strategies and proven execution.
+    </p>
+    
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Start Your Growth 🚀</a>
+      <a href="#services" class="btn btn-secondary">Learn More</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-stats-grid">
-        <div class="stat-card accent-card">
-          <div class="stat-val">170+</div>
-          <div class="stat-label">Projects Delivered</div>
-          <div class="stat-trend">↑ Shopify & Amazon</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">$94K+</div>
-          <div class="stat-label">Client Revenue Managed</div>
-          <div class="stat-trend">↑ Verified Results</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">47%</div>
-          <div class="stat-label">Avg Returning Customer Rate</div>
-          <div class="stat-trend">↑ Retention Focus</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">5★</div>
-          <div class="stat-label">Client Satisfaction</div>
-          <div class="stat-trend">↑ Fiverr & Upwork</div>
-        </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">170+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$94K+</div>
+        <div class="stat-label">Revenue Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">47%</div>
+        <div class="stat-label">Avg ROI Increase</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5★</div>
+        <div class="stat-label">Client Rating</div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- MARQUEE STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <div class="strip-item"><span class="strip-dot"></span> Shopify Store Setup</div>
-    <div class="strip-item"><span class="strip-dot"></span> Conversion Rate Optimization</div>
-    <div class="strip-item"><span class="strip-dot"></span> Amazon Listing Optimization</div>
-    <div class="strip-item"><span class="strip-dot"></span> Klaviyo Email Marketing</div>
-    <div class="strip-item"><span class="strip-dot"></span> AI-Powered Automation</div>
-    <div class="strip-item"><span class="strip-dot"></span> Inventory Management</div>
-    <div class="strip-item"><span class="strip-dot"></span> Shopify Store Setup</div>
-    <div class="strip-item"><span class="strip-dot"></span> Conversion Rate Optimization</div>
-    <div class="strip-item"><span class="strip-dot"></span> Amazon Listing Optimization</div>
-    <div class="strip-item"><span class="strip-dot"></span> Klaviyo Email Marketing</div>
-    <div class="strip-item"><span class="strip-dot"></span> AI-Powered Automation</div>
-    <div class="strip-item"><span class="strip-dot"></span> Inventory Management</div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Full-Spectrum<br>Ecommerce Services</h2>
-    <p class="section-sub">From store setup to scaling — we handle every layer of your ecommerce growth stack.</p>
-    <div class="services-grid">
-
-      <div class="service-card dark-card">
-        <div class="service-icon">🛒</div>
-        <div class="service-title">Shopify Store Setup & Optimization</div>
-        <div class="service-desc">Complete Shopify store creation, theme configuration, product setup, navigation, and launch support. Homepage and product page optimization focused on conversion[...]
-        <div class="service-tags">
-          <span class="service-tag">Store Setup</span>
-          <span class="service-tag">Theme Config</span>
-          <span class="service-tag">CRO</span>
-          <span class="service-tag">Mobile UX</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📧</div>
-        <div class="service-title">Email Marketing & Retention</div>
-        <div class="service-desc">Klaviyo-powered email flows — abandoned cart recovery, welcome sequences, post-purchase automation, win-back campaigns, and segmented newsletters to maximize L[...]
-        <div class="service-tags">
-          <span class="service-tag">Klaviyo</span>
-          <span class="service-tag">Abandoned Cart</span>
-          <span class="service-tag">Automation</span>
-          <span class="service-tag">Segmentation</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">⭐</div>
-        <div class="service-title">Reviews & Trust Building</div>
-        <div class="service-desc">Judge.me review system setup — automated review requests, photo reviews, homepage widgets, and trust signal implementation that convert browsers into buyers.</div>
-        <div class="service-tags">
-          <span class="service-tag">Judge.me</span>
-          <span class="service-tag">Social Proof</span>
-          <span class="service-tag">Auto Requests</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📦</div>
-        <div class="service-title">Amazon Marketplace Services</div>
-        <div class="service-desc">Amazon listing optimization, keyword research, title and bullet point writing, backend search terms, catalog management, and brand storefront strategy.</div>
-        <div class="service-tags">
-          <span class="service-tag">Listing Optimization</span>
-          <span class="service-tag">Keyword Research</span>
-          <span class="service-tag">Catalog Mgmt</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <div class="service-title">Conversion Rate Optimization</div>
-        <div class="service-desc">Store audits, product page analysis, customer journey mapping, trust signal implementation, checkout improvements — more sales without increasing ad spend.</div>
-        <div class="service-tags">
-          <span class="service-tag">Store Audit</span>
-          <span class="service-tag">Checkout CX</span>
-          <span class="service-tag">A/B Strategy</span>
-        </div>
-      </div>
-
-      <div class="service-card dark-card">
-        <div class="service-icon">🤖</div>
-        <div class="service-title">AI-Powered Ecommerce</div>
-        <div class="service-desc">AI-generated product descriptions, email content, SEO copy, store audit reports, and conversion recommendations — faster output, consistent quality, scalable e[...]
-        <div class="service-tags">
-          <span class="service-tag">AI Content</span>
-          <span class="service-tag">SEO Copy</span>
-          <span class="service-tag">Automation</span>
-        </div>
-      </div>
-
-    </div>
+  <div class="hero-visual">
+    <div class="hero-image">🛍️</div>
   </div>
 </section>
 
-<!-- PORTFOLIO / WORK -->
-<div id="work" class="work-section">
-  <div class="work-inner">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title" style="color:#fff;">Real Work.<br>Real Results.</h2>
-    <p class="section-sub">A selection of Shopify stores, Amazon projects, and analytics dashboards delivered for clients.</p>
-
-    <div class="work-tabs">
-      <button class="work-tab active">All</button>
-      <button class="work-tab">Shopify Stores</button>
-      <button class="work-tab">Analytics & Reports</button>
-      <button class="work-tab">Amazon</button>
-      <button class="work-tab">Inventory</button>
-    </div>
-
-    <div class="work-grid">
-
-      <!-- Shopify stores — img11, img12 -->
-      <div class="work-card wide">
-        <img class="work-img" src="img11.png" alt="Shaista Jewelry Shopify Store" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Shopify Store</div>
-          <div class="work-name">Shaista Jewelry — Luxury Fashion Store</div>
-          <div class="work-desc">Full Shopify setup with premium theme, jewelry collections, and high-conversion product pages.</div>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <img class="work-img" src="img12.png" alt="Angan Shopify Store" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Shopify Store</div>
-          <div class="work-name">ANGAN — Embroidered Fashion</div>
-          <div class="work-desc">Pakistani fashion ecommerce store with free shipping announcement bar, clean navigation, and mobile UX.</div>
-        </div>
-      </div>
-
-      <!-- Shopify product page — img5 -->
-      <div class="work-card">
-        <img class="work-img" src="img5.jpg" alt="Flakes Shopify Product Page" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Product Page CRO</div>
-          <div class="work-name">Flakes — Subscription Product Page</div>
-          <div class="work-desc">High-converting product page with subscription upsell, trust signals, and bundle options.</div>
-        </div>
-      </div>
-
-      <!-- Shopify Analytics dashboards — img1, img2 -->
-      <div class="work-card wide">
-        <img class="work-img" src="img1.jpg" alt="Shopify Dashboard Analytics" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Analytics & Reporting</div>
-          <div class="work-name">Shopify Dashboard — 45K Transactions</div>
-          <div class="work-desc">Full store analytics setup: revenue funnel (34.5% conversion rate), net sales tracking, and quarterly goal monitoring.</div>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <img class="work-img" src="img2.jpg" alt="Shopify Overview Dashboard" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Analytics & Growth</div>
-          <div class="work-name">Store Growth — $137K Sales, 1,046% ↑</div>
-          <div class="work-desc">Month-over-month tracking with 93K sessions and 438% session growth for a scaling brand.</div>
-        </div>
-      </div>
-
-      <!-- Finance overview — img3 -->
-      <div class="work-card">
-        <img class="work-img" src="img3.jpg" alt="Finance Overview Dashboard" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Finance Reporting</div>
-          <div class="work-name">Annual Finance Overview — $94K Revenue</div>
-          <div class="work-desc">Full-year financial reporting: gross sales, net sales, AOV, MER, COGS, and gross margin tracking.</div>
-        </div>
-      </div>
-
-      <!-- Traffic dashboard — img4 -->
-      <div class="work-card wide">
-        <img class="work-img" src="img4.jpg" alt="Shopify Traffic Dashboard" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Traffic Analytics</div>
-          <div class="work-name">Store Traffic Dashboard — $788K Total Sales</div>
-          <div class="work-desc">Detailed funnel tracking: 50K views, 14K sessions, 7K add-to-carts, and monthly breakdown table.</div>
-        </div>
-      </div>
-
-      <!-- Shopify Reports — img7 -->
-      <div class="work-card">
-        <img class="work-img" src="img7.jpg" alt="Shopify Reports" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Shopify Analytics</div>
-          <div class="work-name">Custom Reports & Cohort Analysis</div>
-          <div class="work-desc">Inventory reports, cohort analysis setup, and custom reporting dashboards inside Shopify admin.</div>
-        </div>
-      </div>
-
-      <!-- Amazon — img10 -->
-      <div class="work-card">
-        <img class="work-img" src="img10.jpg" alt="Amazon Product Listing" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Amazon Listing</div>
-          <div class="work-name">Amazon Product Optimization</div>
-          <div class="work-desc">SEO-optimized product title, bullet points, description, and imagery strategy for Amazon marketplace.</div>
-        </div>
-      </div>
-
-      <!-- Inventory — img6, img8, img9 -->
-      <div class="work-card">
-        <img class="work-img" src="img6.jpg" alt="Amazon Inventory Dashboard" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Inventory Management</div>
-          <div class="work-name">Amazon Multi-Channel Inventory — 20K+ Listings</div>
-          <div class="work-desc">Cross-marketplace inventory tracking across Amazon, Walmart, and Jet with profit and ROI analysis.</div>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <img class="work-img" src="img8.jpg" alt="Stock Taking Dashboard" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Inventory Management</div>
-          <div class="work-name">Shopify Stock Taking & Reconciliation</div>
-          <div class="work-desc">Real-time stock count, mismatch detection, and barcode scanning integration for warehouse operations.</div>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <img class="work-img" src="img9.jpg" alt="Inventory Planner" loading="lazy">
-        <div class="work-info">
-          <div class="work-cat">Inventory Planning</div>
-          <div class="work-name">BR Inventory Planner — 2118 Variants</div>
-          <div class="work-desc">Smart reorder recommendations, weeks-of-stock tracking, and critical stock alerts for fashion brand.</div>
-        </div>
-      </div>
-
-    </div>
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-content">
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify Optimization</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Amazon Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>CRO Strategy</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Email Automation</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AI Integration</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Analytics Setup</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify Optimization</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Amazon Growth</div>
   </div>
 </div>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="section">
-    <div class="section-label">How We Work</div>
-    <h2 class="section-title">Simple 4-Step<br>Process</h2>
-    <p class="section-sub">From first conversation to live results — here's exactly how we work with every client.</p>
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="process-num">01</div>
-        <div class="process-title">Discovery Call</div>
-        <div class="process-desc">We start with a free consultation to understand your business, goals, current challenges, and what success looks like for you.</div>
+<!-- SERVICES SECTION -->
+<section class="section" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Services Built for Growth</h2>
+    <p class="section-desc">We specialize in ecommerce solutions that drive real revenue growth for your business.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🛒</div>
+      <h3 class="service-title">Shopify Optimization</h3>
+      <p class="service-desc">Complete store setup, theme configuration, conversion optimization, and performance tracking.</p>
+      <div class="service-tags">
+        <span class="tag">Store Setup</span>
+        <span class="tag">CRO</span>
+        <span class="tag">Performance</span>
       </div>
-      <div class="process-card">
-        <div class="process-num">02</div>
-        <div class="process-title">Audit & Strategy</div>
-        <div class="process-desc">We audit your store or listings and build a tailored growth plan — identifying the highest-impact areas to fix and optimize first.</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📧</div>
+      <h3 class="service-title">Email Marketing</h3>
+      <p class="service-desc">Klaviyo automation, abandoned cart recovery, welcome sequences, and retention campaigns.</p>
+      <div class="service-tags">
+        <span class="tag">Klaviyo</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Retention</span>
       </div>
-      <div class="process-card">
-        <div class="process-num">03</div>
-        <div class="process-title">Execution</div>
-        <div class="process-desc">Our team implements everything — store setup, email flows, listing optimization, or automation — with clear timelines and updates.</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📦</div>
+      <h3 class="service-title">Amazon Marketplace</h3>
+      <p class="service-desc">Listing optimization, keyword research, competitor analysis, and sales growth strategies.</p>
+      <div class="service-tags">
+        <span class="tag">Listing Optimization</span>
+        <span class="tag">Keywords</span>
+        <span class="tag">Growth</span>
       </div>
-      <div class="process-card">
-        <div class="process-num">04</div>
-        <div class="process-title">Optimize & Scale</div>
-        <div class="process-desc">After launch we monitor performance, test improvements, and iterate — ensuring your results compound over time.</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3 class="service-title">Analytics & Reporting</h3>
+      <p class="service-desc">Data dashboards, performance tracking, custom reports, and actionable insights.</p>
+      <div class="service-tags">
+        <span class="tag">Analytics</span>
+        <span class="tag">Dashboards</span>
+        <span class="tag">Insights</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⭐</div>
+      <h3 class="service-title">Trust & Reviews</h3>
+      <p class="service-desc">Judge.me integration, review management, social proof implementation, and brand building.</p>
+      <div class="service-tags">
+        <span class="tag">Reviews</span>
+        <span class="tag">Trust</span>
+        <span class="tag">Conversion</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3 class="service-title">AI Integration</h3>
+      <p class="service-desc">AI-powered product descriptions, content generation, automation, and smart recommendations.</p>
+      <div class="service-tags">
+        <span class="tag">AI Tools</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Scaling</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
-<section id="about" style="background:#fff; padding: 5rem 0;">
-  <div class="section">
-    <div class="section-label">Why INBLINK</div>
-    <h2 class="section-title">Built for Ecommerce.<br>Focused on Growth.</h2>
-    <p class="section-sub">We're not a generalist agency. Every service we offer is purpose-built for Shopify and Amazon brands.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🎯</div>
-        <div>
-          <div class="why-title">Ecommerce-Only Expertise</div>
-          <div class="why-desc">100% focused on Shopify and Amazon — no diluted generalist work. Every team member specializes in ecommerce growth.</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">⚡</div>
-        <div>
-          <div class="why-title">AI-Powered Workflows</div>
-          <div class="why-desc">We leverage advanced AI tools for content, audits, and optimization — delivering faster results without sacrificing quality.</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📈</div>
-        <div>
-          <div class="why-title">Conversion-First Approach</div>
-          <div class="why-desc">Every decision is driven by one goal: increasing your revenue. We optimize for sales, not just traffic or aesthetics.</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🤝</div>
-        <div>
-          <div class="why-title">Long-Term Partnership</div>
-          <div class="why-desc">We don't disappear after delivery. We're available for ongoing support, iterations, and scaling as your business grows.</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💰</div>
-        <div>
-          <div class="why-title">Affordable for Growing Brands</div>
-          <div class="why-desc">Enterprise-level strategy and execution at pricing that works for startups, small brands, and growing DTC businesses.</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🌍</div>
-        <div>
-          <div class="why-title">Global Client Base</div>
-          <div class="why-desc">We've delivered projects for brands worldwide — working across time zones with fast communication and reliable delivery.</div>
-        </div>
+<!-- PORTFOLIO SECTION -->
+<section class="section portfolio-section" id="portfolio">
+  <div class="section-header">
+    <div class="section-label">Recent Work</div>
+    <h2 class="section-title">Projects & Results</h2>
+    <p class="section-desc">Real work delivered for ecommerce brands worldwide.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-image">🎨</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Shopify Store</div>
+        <h4 class="portfolio-title">Luxury Fashion Store</h4>
+        <p class="portfolio-desc">Complete store redesign with high-conversion product pages.</p>
       </div>
     </div>
 
-    <!-- Platforms -->
-    <div style="margin-top: 3rem;">
-      <div class="section-label">Platforms We Serve</div>
-      <div class="platforms-row">
-        <div class="platform-badge"><span class="platform-dot" style="background:#96bf48"></span> Shopify</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#ff9900"></span> Amazon</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#3b5998"></span> Fiverr</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#6fda44"></span> Upwork</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#7c5cbf"></span> Klaviyo</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#eb4b27"></span> Judge.me</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#999"></span> WooCommerce (Soon)</div>
-        <div class="platform-badge"><span class="platform-dot" style="background:#f1641e"></span> Etsy (Soon)</div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">📈</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Analytics</div>
+        <h4 class="portfolio-title">Sales Dashboard</h4>
+        <p class="portfolio-desc">Custom reporting dashboard tracking $788K in sales.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">🏆</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Amazon</div>
+        <h4 class="portfolio-title">Marketplace Optimization</h4>
+        <p class="portfolio-desc">Optimized listings with 200% increase in visibility.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">📊</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Analytics</div>
+        <h4 class="portfolio-title">Growth Analytics</h4>
+        <p class="portfolio-desc">Month-over-month tracking with 438% session growth.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">💳</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Conversion</div>
+        <h4 class="portfolio-title">Subscription Page</h4>
+        <p class="portfolio-desc">High-converting product page with 34% lift in AOV.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">📦</div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Inventory</div>
+        <h4 class="portfolio-title">Inventory System</h4>
+        <p class="portfolio-desc">Multi-channel inventory management for 20K+ SKUs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<div class="cta-section">
-  <div class="cta-inner">
-    <h2 class="cta-title">Ready to Grow Your Ecommerce Revenue?</h2>
-    <p class="cta-sub">Book a free consultation and let's build a growth plan tailored to your Shopify store or Amazon listings.</p>
-    <div class="cta-btns">
-      <a href="mailto:inblinkofficial@gmail.com" class="btn btn-white">📩 Email Us Now</a>
-      <a href="#contact" class="btn btn-ghost-white">View Contact Info ↓</a>
-    </div>
-  </div>
+<!-- CTA SECTION -->
+<div class="cta-section" id="process">
+  <h2 class="cta-title">Ready to Scale Your Ecommerce?</h2>
+  <p class="cta-desc">Get a free consultation and discover how we can grow your revenue with proven strategies.</p>
+  <a href="#contact" class="btn btn-secondary" style="background: white; color: var(--primary); font-weight: 700;">Book Free Consultation →</a>
 </div>
 
 <!-- CONTACT SECTION -->
-<section id="contact" style="background:#f5f3ef; padding: 5rem 0;">
-  <div class="section">
-    <div class="section-label">Contact Us</div>
-    <h2 class="section-title">Let's Work<br>Together.</h2>
-    <p class="section-sub">Reach out through any of the channels below — we respond fast and offer free consultations.</p>
+<section class="section contact-section" id="contact">
+  <div class="section-header">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-desc">Reach out through any channel below. We typically respond within 2 hours.</p>
+  </div>
 
-    <div class="contact-grid">
-
-      <!-- Left: contact cards -->
-      <div class="contact-cards">
-
-        <a class="contact-card" href="mailto:inblinkofficial@gmail.com">
-          <div class="contact-card-icon">📧</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">Email</div>
-            <div class="contact-card-val">inblinkofficial@gmail.com</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="tel:+923349918283">
-          <div class="contact-card-icon">📞</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">Phone / WhatsApp</div>
-            <div class="contact-card-val">+92 334 991 8283</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="YOUR_FIVERR_LINK_HERE" target="_blank" rel="noopener">
-          <div class="contact-card-icon" style="background:#fff0e0;">🛒</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">Fiverr</div>
-            <div class="contact-card-val">Hire us on Fiverr</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="YOUR_UPWORK_LINK_HERE" target="_blank" rel="noopener">
-          <div class="contact-card-icon" style="background:#e8f5e9;">💼</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">Upwork</div>
-            <div class="contact-card-val">Hire us on Upwork</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="YOUR_LINKEDIN_LINK_HERE" target="_blank" rel="noopener">
-          <div class="contact-card-icon" style="background:#e8f0fe;">💼</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">LinkedIn</div>
-            <div class="contact-card-val">Connect on LinkedIn</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="YOUR_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener">
-          <div class="contact-card-icon" style="background:#fce4ec;">📸</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">Instagram</div>
-            <div class="contact-card-val">@inblinkofficial</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-        <a class="contact-card" href="YOUR_YOUTUBE_LINK_HERE" target="_blank" rel="noopener">
-          <div class="contact-card-icon" style="background:#ffebee;">▶️</div>
-          <div class="contact-card-body">
-            <div class="contact-card-label">YouTube</div>
-            <div class="contact-card-val">Watch on YouTube</div>
-          </div>
-          <div class="contact-card-arrow">↗</div>
-        </a>
-
-      </div>
-
-      <!-- Right: info box -->
-      <div class="contact-info-box">
-        <div class="contact-info-top">
-          <div class="contact-brand">INB<span>LINK</span></div>
-          <div class="contact-tagline">Ecommerce Growth Agency</div>
-          <p class="contact-blurb">
-            We help Shopify brands and Amazon sellers grow through strategic optimization, 
-            email marketing, conversion improvements, and AI-powered automation. 
-            Average response time: <strong>under 2 hours.</strong>
-          </p>
+  <div class="contact-grid">
+    <div class="contact-cards">
+      <a href="mailto:inblinkofficial@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-content">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">inblinkofficial@gmail.com</div>
         </div>
-        <div class="contact-hours">
-          <div class="contact-hours-title">⏱ Availability</div>
-          <div class="contact-hours-row"><span>Monday – Saturday</span><span class="hours-val">9 AM – 10 PM PKT</span></div>
-          <div class="contact-hours-row"><span>Sunday</span><span class="hours-val">By appointment</span></div>
-          <div class="contact-hours-row"><span>Response time</span><span class="hours-val" style="color:var(--green);">~2 hours</span></div>
-        </div>
-        <a href="mailto:inblinkofficial@gmail.com" class="btn btn-dark" style="width:100%; justify-content:center; border-radius:10px; margin-top:1.5rem;">
-          📩 Send Us a Message
-        </a>
-      </div>
+      </a>
 
+      <a href="tel:+923349918283" class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-content">
+          <div class="contact-label">WhatsApp/Phone</div>
+          <div class="contact-value">+92 334 991 8283</div>
+        </div>
+      </a>
+
+      <a href="#" class="contact-card">
+        <div class="contact-icon">🎯</div>
+        <div class="contact-content">
+          <div class="contact-label">Fiverr</div>
+          <div class="contact-value">Hire Us on Fiverr</div>
+        </div>
+      </a>
+
+      <a href="#" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div class="contact-content">
+          <div class="contact-label">Upwork</div>
+          <div class="contact-value">Find Us on Upwork</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-info">
+      <h3>INB<span style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LINK</span></h3>
+      <div class="contact-info-sub">Ecommerce Growth Agency</div>
+      <p class="contact-info-desc">
+        We specialize in helping Shopify and Amazon sellers grow revenue through strategic optimization, AI automation, and data-driven execution.
+      </p>
+      
+      <div class="hours-list">
+        <div class="hours-title">⏱ Availability</div>
+        <div class="hours-item">
+          <span>Monday - Saturday</span>
+          <span class="hours-time">9 AM - 10 PM PKT</span>
+        </div>
+        <div class="hours-item">
+          <span>Sunday</span>
+          <span class="hours-time">By Appointment</span>
+        </div>
+        <div class="hours-item">
+          <span>Response Time</span>
+          <span class="hours-time" style="color: var(--success);">~2 Hours</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">INB<span>LINK</span> <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.3);font-family:var(--body)">Agency</span></div>
-    <ul class="footer-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Portfolio</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Shopify Optimization</a></li>
+        <li><a href="#services">Email Marketing</a></li>
+        <li><a href="#services">Amazon Growth</a></li>
+        <li><a href="#services">Analytics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Shopify</a></li>
+        <li><a href="#">Amazon</a></li>
+        <li><a href="#">Klaviyo</a></li>
+        <li><a href="#">Judge.me</a></li>
+      </ul>
+    </div>
   </div>
+
   <div class="footer-bottom">
-    <span>© 2025 INBLINK Agency · Ecommerce Growth • Shopify Optimization • Amazon Marketplace Solutions</span>
-    <span><a href="mailto:inblinkofficial@gmail.com" style="color:rgba(255,255,255,0.35);">inblinkofficial@gmail.com</a> · +92 334 991 8283</span>
+    <span>© 2025 INBLINK Agency. All rights reserved.</span>
+    <span>Ecommerce Growth • Shopify Optimization • Amazon Marketplace</span>
   </div>
 </footer>
 
 <script>
-// Dark mode toggle
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-const themeLabel = document.getElementById('themeLabel');
-const html = document.documentElement;
+  // Theme Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  
+  // Check saved preference
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    html.classList.add('dark-mode');
+    themeToggle.textContent = '☀️';
+  }
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-html.classList.toggle('dark-mode', currentTheme === 'dark');
-updateThemeButton();
-
-themeToggle.addEventListener('click', () => {
-  html.classList.toggle('dark-mode');
-  const isDarkMode = html.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  updateThemeButton();
-});
-
-function updateThemeButton() {
-  const isDarkMode = html.classList.contains('dark-mode');
-  themeIcon.textContent = isDarkMode ? '☀️' : '🌙';
-  themeLabel.textContent = isDarkMode ? 'Light' : 'Dark';
-}
-
-// Tab filter (visual only — shows active state)
-document.querySelectorAll('.work-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.work-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark-mode');
+    const isDark = html.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
   });
-});
+
+  // Smooth scroll for navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 </script>
 
 </body>
