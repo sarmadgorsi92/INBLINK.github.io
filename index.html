@@ -91,24 +91,28 @@
   }
 
   .brand-logo {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    font-weight: 800;
-    color: white;
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     overflow: hidden;
+    background: transparent;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .brand-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
   }
 
   .brand-logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 4px;
   }
 
   .brand-text {
@@ -511,7 +515,7 @@
     font-weight: 500;
   }
 
-  /* ────── PORTFOLIO ─��──── */
+  /* ────── PORTFOLIO ────── */
   .portfolio-section {
     background: var(--bg-secondary);
   }
@@ -584,7 +588,7 @@
     line-height: 1.6;
   }
 
-  /* ────── CTA SECTION ────── */
+  /* ──��─── CTA SECTION ────── */
   .cta-section {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     padding: 4rem 2rem;
@@ -688,12 +692,36 @@
     top: 100px;
   }
 
+  .contact-info-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+  }
+
+  .contact-info-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+  }
+
   .contact-info h3 {
     font-family: 'Outfit', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
   }
 
   .contact-info-sub {
@@ -758,6 +786,49 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+  }
+
+  .footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-brand-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .footer-brand-sub {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 500;
   }
 
   .footer-col h4 {
@@ -860,7 +931,9 @@
 <nav>
   <div class="nav-container">
     <a href="#" class="nav-brand">
-      <div class="brand-logo">📊</div>
+      <div class="brand-logo">
+        <img src="logo.png" alt="INBLINK Logo">
+      </div>
       <div class="brand-text">INB<span class="highlight">LINK</span></div>
     </a>
 
@@ -1201,7 +1274,14 @@
     </div>
 
     <div class="contact-info">
-      <h3>INB<span style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LINK</span></h3>
+      <div class="contact-info-header">
+        <div class="contact-info-logo">
+          <img src="logo.png" alt="INBLINK Logo">
+        </div>
+        <div>
+          <h3>INB<span style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LINK</span></h3>
+        </div>
+      </div>
       <div class="contact-info-sub">Ecommerce Growth Agency</div>
       <p class="contact-info-desc">
         We specialize in helping Shopify and Amazon sellers grow revenue through strategic optimization, AI automation, and data-driven execution.
@@ -1229,6 +1309,18 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
+    <div class="footer-col">
+      <div class="footer-logo-section">
+        <div class="footer-logo">
+          <img src="logo.png" alt="INBLINK Logo">
+        </div>
+        <div class="footer-brand">
+          <div class="footer-brand-name">INBLINK</div>
+          <div class="footer-brand-sub">Ecommerce Agency</div>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
