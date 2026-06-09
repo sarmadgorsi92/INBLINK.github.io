@@ -41,6 +41,188 @@
     --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.5);
   }
 
+  /* ══════════════════════════════════════════════
+     THEME ENGINE — USER DEFINED THEMES
+     Each theme overrides the same CSS variables.
+     To add your own theme:
+       1. Copy any block below
+       2. Change the class name  e.g. html.theme-mytheme
+       3. Override the variables you want
+       4. Add a <button onclick="setTheme('mytheme')"> in the selector
+  ══════════════════════════════════════════════ */
+
+  /* ── THEME: ASTRA (clean minimal, light editorial) ── */
+  html.theme-astra {
+    --primary: #1e73be;
+    --primary-dark: #155a9a;
+    --secondary: #3a3a3a;
+    --accent: #27ae60;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --bg-tertiary: #f0f0f0;
+    --text-primary: #3a3a3a;
+    --text-secondary: #5a5a5a;
+    --text-tertiary: #888888;
+    --border-color: #e0e0e0;
+    --card-bg: #ffffff;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.1);
+    --font-display: 'Inter', sans-serif;
+    --radius-card: 6px;
+  }
+  html.theme-astra body { font-family: 'Inter', sans-serif; }
+  html.theme-astra .brand-text,
+  html.theme-astra .section-title,
+  html.theme-astra .hero-content h1 { font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  html.theme-astra .cta-button,
+  html.theme-astra .btn-primary { border-radius: 4px !important; background: var(--primary) !important; }
+  html.theme-astra nav { border-bottom: 2px solid var(--primary) !important; box-shadow: none !important; }
+
+  /* ── THEME: ENVATO ELEMENTS (bold, dark creative) ── */
+  html.theme-envato {
+    --primary: #82b541;
+    --primary-dark: #6a9432;
+    --secondary: #1c1c1c;
+    --accent: #f0c040;
+    --bg-primary: #1c1c1c;
+    --bg-secondary: #252525;
+    --bg-tertiary: #2e2e2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-tertiary: #888888;
+    --border-color: #3a3a3a;
+    --card-bg: #252525;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    --card-shadow-hover: 0 16px 40px rgba(0,0,0,0.6);
+    --radius-card: 8px;
+  }
+  html.theme-envato body { font-family: 'Inter', sans-serif; background: #1c1c1c; color: #fff; }
+  html.theme-envato nav { background: #141414 !important; border-bottom-color: #333 !important; }
+  html.theme-envato .cta-button { background: linear-gradient(135deg, #82b541, #6a9432) !important; }
+  html.theme-envato .section-label { color: #82b541 !important; }
+  html.theme-envato .section-label::before { background: #82b541 !important; }
+
+  /* ── THEME: SHOPIFY DAWN (clean commerce, white & green) ── */
+  html.theme-dawn {
+    --primary: #008060;
+    --primary-dark: #005e46;
+    --secondary: #212326;
+    --accent: #e8b900;
+    --bg-primary: #fafafa;
+    --bg-secondary: #f6f6f6;
+    --bg-tertiary: #ebebeb;
+    --text-primary: #212326;
+    --text-secondary: #6d7175;
+    --text-tertiary: #8c9196;
+    --border-color: #d9d9d9;
+    --card-bg: #ffffff;
+    --card-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+    --radius-card: 3px;
+  }
+  html.theme-dawn body { font-family: 'Inter', sans-serif; }
+  html.theme-dawn .cta-button { border-radius: 3px !important; background: var(--primary) !important; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px !important; }
+  html.theme-dawn nav { box-shadow: none !important; border-bottom: 1px solid #d9d9d9 !important; }
+  html.theme-dawn .section-label { color: var(--primary) !important; }
+  html.theme-dawn .section-label::before { background: var(--primary) !important; }
+
+  /* ── THEME: SHOPIFY SENSE (luxury, dark navy) ── */
+  html.theme-sense {
+    --primary: #c9a96e;
+    --primary-dark: #b8914f;
+    --secondary: #1b2a3b;
+    --accent: #e8d5b5;
+    --bg-primary: #0e1c2b;
+    --bg-secondary: #1b2a3b;
+    --bg-tertiary: #243447;
+    --text-primary: #f0ebe3;
+    --text-secondary: #b8c4cf;
+    --text-tertiary: #7a8fa0;
+    --border-color: #2a3d52;
+    --card-bg: #1b2a3b;
+    --card-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    --card-shadow-hover: 0 12px 32px rgba(0,0,0,0.5);
+    --radius-card: 2px;
+  }
+  html.theme-sense body { background: #0e1c2b; color: #f0ebe3; }
+  html.theme-sense nav { background: rgba(14,28,43,0.97) !important; border-bottom-color: #2a3d52 !important; }
+  html.theme-sense .cta-button { background: linear-gradient(135deg, #c9a96e, #b8914f) !important; border-radius: 2px !important; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px !important; }
+  html.theme-sense .section-label { color: #c9a96e !important; }
+  html.theme-sense .section-label::before { background: #c9a96e !important; }
+
+  /* ── THEME: USER CUSTOM (your own — edit freely below) ── */
+  html.theme-custom {
+    /* ✏️ EDIT THESE VALUES TO CREATE YOUR OWN THEME */
+    --primary: #7c3aed;          /* Main brand color */
+    --primary-dark: #6d28d9;     /* Darker version */
+    --secondary: #1e1b4b;        /* Secondary color */
+    --accent: #f59e0b;           /* Accent / highlight */
+    --bg-primary: #faf5ff;       /* Page background */
+    --bg-secondary: #f3e8ff;     /* Card / section bg */
+    --bg-tertiary: #ede9fe;      /* Input / tag bg */
+    --text-primary: #1e1b4b;     /* Main text */
+    --text-secondary: #4c1d95;   /* Subtitles */
+    --text-tertiary: #7c3aed;    /* Captions */
+    --border-color: #ddd6fe;     /* Borders */
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 12px rgba(124,58,237,0.1);
+    --card-shadow-hover: 0 16px 40px rgba(124,58,237,0.2);
+    --radius-card: 16px;
+    /* ✏️ Add more overrides below this line */
+  }
+  html.theme-custom .cta-button { background: linear-gradient(135deg, #7c3aed, #6d28d9) !important; border-radius: 16px !important; }
+  html.theme-custom .section-label { color: #7c3aed !important; }
+  html.theme-custom .section-label::before { background: #7c3aed !important; }
+
+  /* ── THEME SELECTOR UI ── */
+  .theme-selector-wrap {
+    position: relative; display: inline-block;
+  }
+  .theme-selector-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer; font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s; white-space: nowrap;
+    height: 44px;
+  }
+  .theme-selector-btn:hover { background: var(--bg-tertiary); }
+  .theme-dropdown {
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow-hover);
+    padding: 0.5rem;
+    min-width: 200px;
+    z-index: 9999;
+    display: none;
+    flex-direction: column; gap: 2px;
+  }
+  .theme-dropdown.open { display: flex; }
+  .theme-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.6rem 0.8rem; border-radius: 8px;
+    cursor: pointer; font-size: 13px;
+    color: var(--text-primary); font-weight: 500;
+    transition: background 0.15s; border: none;
+    background: transparent; text-align: left; width: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+  .theme-option:hover { background: var(--bg-secondary); }
+  .theme-option.active { background: var(--bg-tertiary); }
+  .theme-swatch {
+    width: 18px; height: 18px; border-radius: 50%;
+    flex-shrink: 0; border: 2px solid rgba(0,0,0,0.08);
+  }
+  .theme-option-label { flex: 1; }
+  .theme-option-sub { font-size: 10px; color: var(--text-tertiary); font-weight: 400; }
+
   * { 
     margin: 0; 
     padding: 0; 
@@ -945,6 +1127,39 @@
     </ul>
 
     <div class="nav-controls">
+      <!-- Multi-Theme Selector -->
+      <div class="theme-selector-wrap">
+        <button class="theme-selector-btn" id="themeSelectorBtn" onclick="toggleThemeDropdown()">
+          🎨 <span id="activeThemeName">Default</span> ▾
+        </button>
+        <div class="theme-dropdown" id="themeDropdown">
+          <button class="theme-option active" onclick="setTheme('default')" id="opt-default">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#FF6B35,#1AC8ED)"></span>
+            <span class="theme-option-label">Default<br><span class="theme-option-sub">Orange & Blue · Light</span></span>
+          </button>
+          <button class="theme-option" onclick="setTheme('astra')" id="opt-astra">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#1e73be,#27ae60)"></span>
+            <span class="theme-option-label">Astra<br><span class="theme-option-sub">Clean Minimal · Light</span></span>
+          </button>
+          <button class="theme-option" onclick="setTheme('envato')" id="opt-envato">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#82b541,#252525)"></span>
+            <span class="theme-option-label">Envato Elements<br><span class="theme-option-sub">Bold Creative · Dark</span></span>
+          </button>
+          <button class="theme-option" onclick="setTheme('dawn')" id="opt-dawn">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#008060,#fafafa)"></span>
+            <span class="theme-option-label">Shopify Dawn<br><span class="theme-option-sub">Clean Commerce · Light</span></span>
+          </button>
+          <button class="theme-option" onclick="setTheme('sense')" id="opt-sense">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#c9a96e,#0e1c2b)"></span>
+            <span class="theme-option-label">Shopify Sense<br><span class="theme-option-sub">Luxury Navy · Dark</span></span>
+          </button>
+          <button class="theme-option" onclick="setTheme('custom')" id="opt-custom">
+            <span class="theme-swatch" style="background:linear-gradient(135deg,#7c3aed,#f59e0b)"></span>
+            <span class="theme-option-label">✏️ My Custom Theme<br><span class="theme-option-sub">Edit in CSS · Purple</span></span>
+          </button>
+        </div>
+      </div>
+      <!-- Dark / Light toggle -->
       <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
       <a href="#contact" class="cta-button">Get Started</a>
     </div>
@@ -1369,32 +1584,89 @@
 </footer>
 
 <script>
-  // Theme Toggle
-  const themeToggle = document.getElementById('themeToggle');
+  /* ══════════════════════════════════════════════
+     INBLINK THEME ENGINE
+     ── How to add your own theme ──
+     1. Add a new CSS block:  html.theme-YOURNAME { --primary: ...; }
+     2. Add a new button in the dropdown above
+     3. Call setTheme('YOURNAME') on click
+  ══════════════════════════════════════════════ */
+
   const html = document.documentElement;
-  
-  // Check saved preference
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  if (savedTheme === 'dark') {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeDropdown = document.getElementById('themeDropdown');
+  const activeThemeName = document.getElementById('activeThemeName');
+
+  const themeLabels = {
+    default: 'Default',
+    astra: 'Astra',
+    envato: 'Envato',
+    dawn: 'Dawn',
+    sense: 'Sense',
+    custom: 'Custom'
+  };
+
+  // All theme classes
+  const allThemes = ['theme-astra','theme-envato','theme-dawn','theme-sense','theme-custom'];
+
+  function setTheme(name) {
+    // Remove all theme classes
+    allThemes.forEach(t => html.classList.remove(t));
+    // Remove dark-mode when switching (dark themes handle their own bg)
+    if (['envato','sense'].includes(name)) {
+      html.classList.remove('dark-mode');
+      themeToggle.textContent = '🌙';
+    }
+    // Apply selected theme
+    if (name !== 'default') html.classList.add('theme-' + name);
+    // Update label
+    activeThemeName.textContent = themeLabels[name] || name;
+    // Update active option highlight
+    document.querySelectorAll('.theme-option').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById('opt-' + name);
+    if (activeBtn) activeBtn.classList.add('active');
+    // Save preference
+    localStorage.setItem('inblink-theme', name);
+    // Close dropdown
+    themeDropdown.classList.remove('open');
+  }
+
+  function toggleThemeDropdown() {
+    themeDropdown.classList.toggle('open');
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.theme-selector-wrap')) {
+      themeDropdown.classList.remove('open');
+    }
+  });
+
+  // Dark / Light toggle (works alongside theme)
+  const savedDark = localStorage.getItem('inblink-dark');
+  if (savedDark === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = '☀️';
   }
-
   themeToggle.addEventListener('click', () => {
     html.classList.toggle('dark-mode');
     const isDark = html.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('inblink-dark', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? '☀️' : '🌙';
   });
 
-  // Smooth scroll for navigation
+  // Restore saved theme on load
+  (function() {
+    const saved = localStorage.getItem('inblink-theme');
+    if (saved && saved !== 'default') setTheme(saved);
+  })();
+
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 </script>
