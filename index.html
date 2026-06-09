@@ -267,42 +267,50 @@
   .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     text-decoration: none;
     flex-shrink: 0;
   }
 
   .brand-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: transparent;
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+    background: #f0f4ff;
+    box-shadow: 0 4px 16px rgba(0, 90, 200, 0.18);
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
 
   .brand-logo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+    transform: scale(1.06);
+    box-shadow: 0 8px 24px rgba(0, 90, 200, 0.28);
   }
 
   .brand-logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 4px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
   }
 
   .brand-text {
     font-family: 'Outfit', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 800;
     color: var(--text-primary);
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
+    line-height: 1;
   }
 
   .brand-text .highlight {
@@ -310,6 +318,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .brand-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    font-style: italic;
   }
 
   .nav-menu {
@@ -1114,9 +1132,12 @@
   <div class="nav-container">
     <a href="#" class="nav-brand">
       <div class="brand-logo">
-        <img src="logo.png" alt="INBLINK Logo">
+        <img src="logo.jpg" alt="INBLINK Logo">
       </div>
-      <div class="brand-text">INB<span class="highlight">LINK</span></div>
+      <div class="brand-info">
+        <div class="brand-text">INB<span class="highlight">LINK</span></div>
+        <div class="brand-tagline">We deal in your satisfaction</div>
+      </div>
     </a>
 
     <ul class="nav-menu">
@@ -1127,39 +1148,6 @@
     </ul>
 
     <div class="nav-controls">
-      <!-- Multi-Theme Selector -->
-      <div class="theme-selector-wrap">
-        <button class="theme-selector-btn" id="themeSelectorBtn" onclick="toggleThemeDropdown()">
-          🎨 <span id="activeThemeName">Default</span> ▾
-        </button>
-        <div class="theme-dropdown" id="themeDropdown">
-          <button class="theme-option active" onclick="setTheme('default')" id="opt-default">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#FF6B35,#1AC8ED)"></span>
-            <span class="theme-option-label">Default<br><span class="theme-option-sub">Orange & Blue · Light</span></span>
-          </button>
-          <button class="theme-option" onclick="setTheme('astra')" id="opt-astra">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#1e73be,#27ae60)"></span>
-            <span class="theme-option-label">Astra<br><span class="theme-option-sub">Clean Minimal · Light</span></span>
-          </button>
-          <button class="theme-option" onclick="setTheme('envato')" id="opt-envato">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#82b541,#252525)"></span>
-            <span class="theme-option-label">Envato Elements<br><span class="theme-option-sub">Bold Creative · Dark</span></span>
-          </button>
-          <button class="theme-option" onclick="setTheme('dawn')" id="opt-dawn">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#008060,#fafafa)"></span>
-            <span class="theme-option-label">Shopify Dawn<br><span class="theme-option-sub">Clean Commerce · Light</span></span>
-          </button>
-          <button class="theme-option" onclick="setTheme('sense')" id="opt-sense">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#c9a96e,#0e1c2b)"></span>
-            <span class="theme-option-label">Shopify Sense<br><span class="theme-option-sub">Luxury Navy · Dark</span></span>
-          </button>
-          <button class="theme-option" onclick="setTheme('custom')" id="opt-custom">
-            <span class="theme-swatch" style="background:linear-gradient(135deg,#7c3aed,#f59e0b)"></span>
-            <span class="theme-option-label">✏️ My Custom Theme<br><span class="theme-option-sub">Edit in CSS · Purple</span></span>
-          </button>
-        </div>
-      </div>
-      <!-- Dark / Light toggle -->
       <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
       <a href="#contact" class="cta-button">Get Started</a>
     </div>
@@ -1585,64 +1573,22 @@
 
 <script>
   /* ══════════════════════════════════════════════
-     INBLINK THEME ENGINE
-     ── How to add your own theme ──
-     1. Add a new CSS block:  html.theme-YOURNAME { --primary: ...; }
-     2. Add a new button in the dropdown above
-     3. Call setTheme('YOURNAME') on click
+     INBLINK THEME ENGINE  (OWNER USE — not visible to visitors)
+     ── How to apply a theme ──
+     1. Open this file in any text editor
+     2. Find  <html lang="en">  at the very top
+     3. Change it to e.g.  <html lang="en" class="theme-astra">
+     Available classes: theme-astra | theme-envato | theme-dawn | theme-sense | theme-custom
+     ── How to add a NEW theme ──
+     1. Copy any  html.theme-XXXX { }  CSS block in the <style> section
+     2. Rename the class and edit the variables
+     3. Apply by adding that class to <html>
   ══════════════════════════════════════════════ */
 
   const html = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
-  const themeDropdown = document.getElementById('themeDropdown');
-  const activeThemeName = document.getElementById('activeThemeName');
 
-  const themeLabels = {
-    default: 'Default',
-    astra: 'Astra',
-    envato: 'Envato',
-    dawn: 'Dawn',
-    sense: 'Sense',
-    custom: 'Custom'
-  };
-
-  // All theme classes
-  const allThemes = ['theme-astra','theme-envato','theme-dawn','theme-sense','theme-custom'];
-
-  function setTheme(name) {
-    // Remove all theme classes
-    allThemes.forEach(t => html.classList.remove(t));
-    // Remove dark-mode when switching (dark themes handle their own bg)
-    if (['envato','sense'].includes(name)) {
-      html.classList.remove('dark-mode');
-      themeToggle.textContent = '🌙';
-    }
-    // Apply selected theme
-    if (name !== 'default') html.classList.add('theme-' + name);
-    // Update label
-    activeThemeName.textContent = themeLabels[name] || name;
-    // Update active option highlight
-    document.querySelectorAll('.theme-option').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.getElementById('opt-' + name);
-    if (activeBtn) activeBtn.classList.add('active');
-    // Save preference
-    localStorage.setItem('inblink-theme', name);
-    // Close dropdown
-    themeDropdown.classList.remove('open');
-  }
-
-  function toggleThemeDropdown() {
-    themeDropdown.classList.toggle('open');
-  }
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.theme-selector-wrap')) {
-      themeDropdown.classList.remove('open');
-    }
-  });
-
-  // Dark / Light toggle (works alongside theme)
+  // Dark / Light toggle for visitors
   const savedDark = localStorage.getItem('inblink-dark');
   if (savedDark === 'dark') {
     html.classList.add('dark-mode');
@@ -1654,12 +1600,6 @@
     localStorage.setItem('inblink-dark', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? '☀️' : '🌙';
   });
-
-  // Restore saved theme on load
-  (function() {
-    const saved = localStorage.getItem('inblink-theme');
-    if (saved && saved !== 'default') setTheme(saved);
-  })();
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
