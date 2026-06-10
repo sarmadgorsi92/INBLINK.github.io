@@ -27,19 +27,101 @@
     --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.1);
   }
 
+  /* ════════════════════════════════════════════════════════
+     DARK MODE — works on DEFAULT theme and all custom themes
+     When visitor clicks 🌙, these variables override the
+     current theme's light values. Each theme also gets its
+     own dark palette below so colours stay on-brand.
+  ════════════════════════════════════════════════════════ */
+
+  /* DEFAULT theme dark mode */
   html.dark-mode {
-    --bg-primary: #0F1419;
-    --bg-secondary: #1a202c;
-    --bg-tertiary: #2d3748;
-    --text-primary: #F7FAFC;
-    --text-secondary: #E2E8F0;
+    --bg-primary:    #0F1419;
+    --bg-secondary:  #1a202c;
+    --bg-tertiary:   #2d3748;
+    --text-primary:  #F7FAFC;
+    --text-secondary:#E2E8F0;
     --text-tertiary: #A0AEC0;
-    --border-color: #2d3748;
-    
-    --card-bg: #1a202c;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.5);
+    --border-color:  #2d3748;
+    --card-bg:       #1a202c;
+    --card-shadow:      0 4px 6px rgba(0,0,0,0.3);
+    --card-shadow-hover:0 20px 25px rgba(0,0,0,0.5);
   }
+
+  /* ASTRA theme dark mode */
+  html.theme-astra.dark-mode {
+    --bg-primary:    #0d1117;
+    --bg-secondary:  #161b22;
+    --bg-tertiary:   #21262d;
+    --text-primary:  #e6edf3;
+    --text-secondary:#8b949e;
+    --text-tertiary: #6e7681;
+    --border-color:  #30363d;
+    --card-bg:       #161b22;
+    --primary:       #58a6ff;
+    --accent:        #3fb950;
+  }
+  html.theme-astra.dark-mode nav {
+    border-bottom: 2px solid #58a6ff !important;
+    background: rgba(13,17,23,0.97) !important;
+  }
+
+  /* ENVATO theme dark mode (already dark — deepen it) */
+  html.theme-envato.dark-mode {
+    --bg-primary:    #111111;
+    --bg-secondary:  #181818;
+    --bg-tertiary:   #202020;
+    --text-primary:  #ffffff;
+    --text-secondary:#dddddd;
+    --text-tertiary: #999999;
+    --border-color:  #2a2a2a;
+    --card-bg:       #181818;
+  }
+  html.theme-envato.dark-mode nav { background: #090909 !important; }
+
+  /* DAWN theme dark mode */
+  html.theme-dawn.dark-mode {
+    --bg-primary:    #0a0f0d;
+    --bg-secondary:  #111a16;
+    --bg-tertiary:   #1a2e22;
+    --text-primary:  #ecfdf5;
+    --text-secondary:#a7f3d0;
+    --text-tertiary: #6ee7b7;
+    --border-color:  #1a2e22;
+    --card-bg:       #111a16;
+    --primary:       #34d399;
+  }
+  html.theme-dawn.dark-mode nav {
+    border-bottom: 1px solid #1a2e22 !important;
+    background: rgba(10,15,13,0.97) !important;
+  }
+
+  /* SENSE theme dark mode (already dark navy — deeper) */
+  html.theme-sense.dark-mode {
+    --bg-primary:    #060e17;
+    --bg-secondary:  #0a1625;
+    --bg-tertiary:   #0e1e32;
+    --text-primary:  #f8f4ee;
+    --text-secondary:#d4c5a9;
+    --text-tertiary: #9a8870;
+    --border-color:  #1a2d42;
+    --card-bg:       #0a1625;
+  }
+  html.theme-sense.dark-mode nav { background: rgba(6,14,23,0.98) !important; }
+
+  /* CUSTOM theme dark mode */
+  html.theme-custom.dark-mode {
+    --bg-primary:    #0f0b1a;
+    --bg-secondary:  #1a1330;
+    --bg-tertiary:   #251c42;
+    --text-primary:  #f5f0ff;
+    --text-secondary:#c4b5fd;
+    --text-tertiary: #a78bfa;
+    --border-color:  #2e2350;
+    --card-bg:       #1a1330;
+    --primary:       #a78bfa;
+  }
+  html.theme-custom.dark-mode nav { background: rgba(15,11,26,0.97) !important; }
 
   /* ══════════════════════════════════════════════
      THEME ENGINE — USER DEFINED THEMES
