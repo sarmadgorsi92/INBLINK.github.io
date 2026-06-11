@@ -27,7 +27,14 @@
     --card-shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.1);
   }
 
-  /* Dark Mode overrides */
+  /* ════════════════════════════════════════════════════════
+     DARK MODE — works on DEFAULT theme and all custom themes
+     When visitor clicks 🌙, these variables override the
+     current theme's light values. Each theme also gets its
+     own dark palette below so colours stay on-brand.
+  ════════════════════════════════════════════════════════ */
+
+  /* DEFAULT theme dark mode */
   html.dark-mode {
     --bg-primary:    #0F1419;
     --bg-secondary:  #1a202c;
@@ -40,6 +47,263 @@
     --card-shadow:      0 4px 6px rgba(0,0,0,0.3);
     --card-shadow-hover:0 20px 25px rgba(0,0,0,0.5);
   }
+
+  /* ASTRA theme dark mode */
+  html.theme-astra.dark-mode {
+    --bg-primary:    #0d1117;
+    --bg-secondary:  #161b22;
+    --bg-tertiary:   #21262d;
+    --text-primary:  #e6edf3;
+    --text-secondary:#8b949e;
+    --text-tertiary: #6e7681;
+    --border-color:  #30363d;
+    --card-bg:       #161b22;
+    --primary:       #58a6ff;
+    --accent:        #3fb950;
+  }
+  html.theme-astra.dark-mode nav {
+    border-bottom: 2px solid #58a6ff !important;
+    background: rgba(13,17,23,0.97) !important;
+  }
+
+  /* ENVATO theme dark mode (already dark — deepen it) */
+  html.theme-envato.dark-mode {
+    --bg-primary:    #111111;
+    --bg-secondary:  #181818;
+    --bg-tertiary:   #202020;
+    --text-primary:  #ffffff;
+    --text-secondary:#dddddd;
+    --text-tertiary: #999999;
+    --border-color:  #2a2a2a;
+    --card-bg:       #181818;
+  }
+  html.theme-envato.dark-mode nav { background: #090909 !important; }
+
+  /* DAWN theme dark mode */
+  html.theme-dawn.dark-mode {
+    --bg-primary:    #0a0f0d;
+    --bg-secondary:  #111a16;
+    --bg-tertiary:   #1a2e22;
+    --text-primary:  #ecfdf5;
+    --text-secondary:#a7f3d0;
+    --text-tertiary: #6ee7b7;
+    --border-color:  #1a2e22;
+    --card-bg:       #111a16;
+    --primary:       #34d399;
+  }
+  html.theme-dawn.dark-mode nav {
+    border-bottom: 1px solid #1a2e22 !important;
+    background: rgba(10,15,13,0.97) !important;
+  }
+
+  /* SENSE theme dark mode (already dark navy — deeper) */
+  html.theme-sense.dark-mode {
+    --bg-primary:    #060e17;
+    --bg-secondary:  #0a1625;
+    --bg-tertiary:   #0e1e32;
+    --text-primary:  #f8f4ee;
+    --text-secondary:#d4c5a9;
+    --text-tertiary: #9a8870;
+    --border-color:  #1a2d42;
+    --card-bg:       #0a1625;
+  }
+  html.theme-sense.dark-mode nav { background: rgba(6,14,23,0.98) !important; }
+
+  /* CUSTOM theme dark mode */
+  html.theme-custom.dark-mode {
+    --bg-primary:    #0f0b1a;
+    --bg-secondary:  #1a1330;
+    --bg-tertiary:   #251c42;
+    --text-primary:  #f5f0ff;
+    --text-secondary:#c4b5fd;
+    --text-tertiary: #a78bfa;
+    --border-color:  #2e2350;
+    --card-bg:       #1a1330;
+    --primary:       #a78bfa;
+  }
+  html.theme-custom.dark-mode nav { background: rgba(15,11,26,0.97) !important; }
+
+  /* ══════════════════════════════════════════════
+     THEME ENGINE — USER DEFINED THEMES
+     Each theme overrides the same CSS variables.
+     To add your own theme:
+       1. Copy any block below
+       2. Change the class name  e.g. html.theme-mytheme
+       3. Override the variables you want
+       4. Add a <button onclick="setTheme('mytheme')"> in the selector
+  ══════════════════════════════════════════════ */
+
+  /* ── THEME: ASTRA (clean minimal, light editorial) ── */
+  html.theme-astra {
+    --primary: #1e73be;
+    --primary-dark: #155a9a;
+    --secondary: #3a3a3a;
+    --accent: #27ae60;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --bg-tertiary: #f0f0f0;
+    --text-primary: #3a3a3a;
+    --text-secondary: #5a5a5a;
+    --text-tertiary: #888888;
+    --border-color: #e0e0e0;
+    --card-bg: #ffffff;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.1);
+    --font-display: 'Inter', sans-serif;
+    --radius-card: 6px;
+  }
+  html.theme-astra body { font-family: 'Inter', sans-serif; }
+  html.theme-astra .brand-text,
+  html.theme-astra .section-title,
+  html.theme-astra .hero-content h1 { font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  html.theme-astra .cta-button,
+  html.theme-astra .btn-primary { border-radius: 4px !important; background: var(--primary) !important; }
+  html.theme-astra nav { border-bottom: 2px solid var(--primary) !important; box-shadow: none !important; }
+
+  /* ── THEME: ENVATO ELEMENTS (bold, dark creative) ── */
+  html.theme-envato {
+    --primary: #82b541;
+    --primary-dark: #6a9432;
+    --secondary: #1c1c1c;
+    --accent: #f0c040;
+    --bg-primary: #1c1c1c;
+    --bg-secondary: #252525;
+    --bg-tertiary: #2e2e2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-tertiary: #888888;
+    --border-color: #3a3a3a;
+    --card-bg: #252525;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    --card-shadow-hover: 0 16px 40px rgba(0,0,0,0.6);
+    --radius-card: 8px;
+  }
+  html.theme-envato body { font-family: 'Inter', sans-serif; background: #1c1c1c; color: #fff; }
+  html.theme-envato nav { background: #141414 !important; border-bottom-color: #333 !important; }
+  html.theme-envato .cta-button { background: linear-gradient(135deg, #82b541, #6a9432) !important; }
+  html.theme-envato .section-label { color: #82b541 !important; }
+  html.theme-envato .section-label::before { background: #82b541 !important; }
+
+  /* ── THEME: SHOPIFY DAWN (clean commerce, white & green) ── */
+  html.theme-dawn {
+    --primary: #008060;
+    --primary-dark: #005e46;
+    --secondary: #212326;
+    --accent: #e8b900;
+    --bg-primary: #fafafa;
+    --bg-secondary: #f6f6f6;
+    --bg-tertiary: #ebebeb;
+    --text-primary: #212326;
+    --text-secondary: #6d7175;
+    --text-tertiary: #8c9196;
+    --border-color: #d9d9d9;
+    --card-bg: #ffffff;
+    --card-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+    --radius-card: 3px;
+  }
+  html.theme-dawn body { font-family: 'Inter', sans-serif; }
+  html.theme-dawn .cta-button { border-radius: 3px !important; background: var(--primary) !important; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px !important; }
+  html.theme-dawn nav { box-shadow: none !important; border-bottom: 1px solid #d9d9d9 !important; }
+  html.theme-dawn .section-label { color: var(--primary) !important; }
+  html.theme-dawn .section-label::before { background: var(--primary) !important; }
+
+  /* ── THEME: SHOPIFY SENSE (luxury, dark navy) ── */
+  html.theme-sense {
+    --primary: #c9a96e;
+    --primary-dark: #b8914f;
+    --secondary: #1b2a3b;
+    --accent: #e8d5b5;
+    --bg-primary: #0e1c2b;
+    --bg-secondary: #1b2a3b;
+    --bg-tertiary: #243447;
+    --text-primary: #f0ebe3;
+    --text-secondary: #b8c4cf;
+    --text-tertiary: #7a8fa0;
+    --border-color: #2a3d52;
+    --card-bg: #1b2a3b;
+    --card-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    --card-shadow-hover: 0 12px 32px rgba(0,0,0,0.5);
+    --radius-card: 2px;
+  }
+  html.theme-sense body { background: #0e1c2b; color: #f0ebe3; }
+  html.theme-sense nav { background: rgba(14,28,43,0.97) !important; border-bottom-color: #2a3d52 !important; }
+  html.theme-sense .cta-button { background: linear-gradient(135deg, #c9a96e, #b8914f) !important; border-radius: 2px !important; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px !important; }
+  html.theme-sense .section-label { color: #c9a96e !important; }
+  html.theme-sense .section-label::before { background: #c9a96e !important; }
+
+  /* ── THEME: USER CUSTOM (your own — edit freely below) ── */
+  html.theme-custom {
+    /* ✏️ EDIT THESE VALUES TO CREATE YOUR OWN THEME */
+    --primary: #7c3aed;          /* Main brand color */
+    --primary-dark: #6d28d9;     /* Darker version */
+    --secondary: #1e1b4b;        /* Secondary color */
+    --accent: #f59e0b;           /* Accent / highlight */
+    --bg-primary: #faf5ff;       /* Page background */
+    --bg-secondary: #f3e8ff;     /* Card / section bg */
+    --bg-tertiary: #ede9fe;      /* Input / tag bg */
+    --text-primary: #1e1b4b;     /* Main text */
+    --text-secondary: #4c1d95;   /* Subtitles */
+    --text-tertiary: #7c3aed;    /* Captions */
+    --border-color: #ddd6fe;     /* Borders */
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 12px rgba(124,58,237,0.1);
+    --card-shadow-hover: 0 16px 40px rgba(124,58,237,0.2);
+    --radius-card: 16px;
+    /* ✏️ Add more overrides below this line */
+  }
+  html.theme-custom .cta-button { background: linear-gradient(135deg, #7c3aed, #6d28d9) !important; border-radius: 16px !important; }
+  html.theme-custom .section-label { color: #7c3aed !important; }
+  html.theme-custom .section-label::before { background: #7c3aed !important; }
+
+  /* ── THEME SELECTOR UI ── */
+  .theme-selector-wrap {
+    position: relative; display: inline-block;
+  }
+  .theme-selector-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer; font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s; white-space: nowrap;
+    height: 44px;
+  }
+  .theme-selector-btn:hover { background: var(--bg-tertiary); }
+  .theme-dropdown {
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow-hover);
+    padding: 0.5rem;
+    min-width: 200px;
+    z-index: 9999;
+    display: none;
+    flex-direction: column; gap: 2px;
+  }
+  .theme-dropdown.open { display: flex; }
+  .theme-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.6rem 0.8rem; border-radius: 8px;
+    cursor: pointer; font-size: 13px;
+    color: var(--text-primary); font-weight: 500;
+    transition: background 0.15s; border: none;
+    background: transparent; text-align: left; width: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+  .theme-option:hover { background: var(--bg-secondary); }
+  .theme-option.active { background: var(--bg-tertiary); }
+  .theme-swatch {
+    width: 18px; height: 18px; border-radius: 50%;
+    flex-shrink: 0; border: 2px solid rgba(0,0,0,0.08);
+  }
+  .theme-option-label { flex: 1; }
+  .theme-option-sub { font-size: 10px; color: var(--text-tertiary); font-weight: 400; }
 
   * { 
     margin: 0; 
@@ -60,7 +324,7 @@
     line-height: 1.6;
   }
 
-  /* NAVIGATION */
+  /* ────── NAVIGATION ────── */
   nav {
     position: sticky;
     top: 0;
@@ -101,6 +365,7 @@
     background: #f0f4ff;
     box-shadow: 0 4px 16px rgba(0, 90, 200, 0.18);
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
 
   .brand-logo:hover {
@@ -112,6 +377,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
   }
 
   .brand-info {
@@ -204,6 +470,11 @@
     height: 44px;
   }
 
+  .theme-toggle:hover {
+    background: var(--bg-tertiary);
+    transform: scale(1.05);
+  }
+
   .cta-button {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white !important;
@@ -223,7 +494,7 @@
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
   }
 
-  /* HERO SECTION */
+  /* ────── HERO SECTION ────── */
   .hero {
     max-width: 1400px;
     margin: 0 auto;
@@ -339,7 +610,243 @@
     font-weight: 500;
   }
 
-  /* SERVICES */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Glow blob behind image */
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    opacity: 0.12;
+    filter: blur(80px);
+    z-index: 0;
+  }
+
+  /* Decorative ring around image */
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    opacity: 0.18;
+    z-index: 0;
+    border-radius: 30px;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow:
+      0 32px 80px rgba(0,0,0,0.18),
+      0 8px 24px rgba(0,0,0,0.12),
+      0 0 0 1px rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: 520px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+  }
+
+  .hero-image-wrap:hover .hero-image {
+    transform: scale(1.02);
+  }
+
+  /* Floating badge overlaid on image */
+  .hero-image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 0.75rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+
+  html.dark-mode .hero-image-badge {
+    background: rgba(26,32,44,0.92);
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .hero-badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .hero-badge-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-badge-val {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .hero-badge-label {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  /* Second floating badge — top right */
+  .hero-image-badge-2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 16px rgba(255,107,53,0.35);
+    z-index: 2;
+  }
+
+  .hero-badge-2-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero-badge-2-text {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+
+  /* ────── MARQUEE ────── */
+  .marquee {
+    background: var(--secondary);
+    padding: 2rem 0;
+    overflow: hidden;
+    margin: 3rem 0;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 3rem;
+    animation: scroll-marquee 30s linear infinite;
+    white-space: nowrap;
+    padding: 0 2rem;
+  }
+
+  @keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ────── SECTIONS ────── */
+  .section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--primary);
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ────── SERVICES ────── */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -414,52 +921,426 @@
     font-weight: 500;
   }
 
-  /* Other sections styles (kept minimal for brevity) */
-  .section {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
+  /* ────── PORTFOLIO ────── */
+  .portfolio-section {
+    background: var(--bg-secondary);
   }
 
-  .section-header {
-    margin-bottom: 3rem;
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
   }
 
-  .section-label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--primary);
-    margin-bottom: 0.8rem;
+  .portfolio-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .portfolio-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--text-tertiary);
+    overflow: hidden;
   }
 
-  .section-title {
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .portfolio-info {
+    padding: 1.5rem;
+    flex: 1;
+  }
+
+  .portfolio-category {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-title {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.2;
+    font-size: 16px;
+    font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ──  ─── CTA SECTION ────── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 4rem 2rem;
+  }
+
+  .cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .cta-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ────── CONTACT SECTION ────── */
+  .contact-section {
+    background: var(--bg-secondary);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .contact-content {
+    flex: 1;
+  }
+
+  .contact-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .contact-info {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  .contact-info-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 1rem;
   }
 
-  .section-desc {
-    font-size: 16px;
-    color: var(--text-secondary);
-    max-width: 600px;
-    line-height: 1.8;
+  .contact-info-logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4ff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,90,200,0.18);
   }
 
-  /* Add the rest of your original styles here if needed */
+  .contact-info-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .contact-info h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .contact-info-sub {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .contact-info-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .hours-list {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+  }
+
+  .hours-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hours-item:last-child {
+    border-bottom: none;
+  }
+
+  .hours-time {
+    font-weight: 600;
+  }
+
+  /* ────── FOOTER ────── */
+  footer {
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+  }
+
+  .footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4ff;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(0,90,200,0.15);
+  }
+
+  .footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-brand-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .footer-brand-sub {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  .footer-col h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-col a:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+  }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  /* ────── RESPONSIVE ────── */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem;
+      min-height: unset;
+      gap: 3rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      height: 320px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      position: relative;
+      top: 0;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .cta-section {
+      margin: 2rem 1.5rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV (kept from original) -->
+<!-- NAVIGATION -->
 <nav>
   <div class="nav-container">
     <a href="#" class="nav-brand">
@@ -475,106 +1356,491 @@
     <ul class="nav-menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
       <a href="#contact" class="cta-button">Get Started</a>
     </div>
   </div>
 </nav>
 
-<!-- SERVICES SECTION - UPDATED -->
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Grow Your <span class="text-gradient">Ecommerce</span> Revenue</h1>
+    <p class="hero-desc">
+      INBLINK Agency helps Shopify brands and Amazon sellers optimize, scale, and automate their digital commerce operations with AI-powered strategies and proven execution.
+    </p>
+    
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Start Your Growth 🚀</a>
+      <a href="#services" class="btn btn-secondary">Learn More</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">170+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$94K+</div>
+        <div class="stat-label">Revenue Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">47%</div>
+        <div class="stat-label">Avg ROI Increase</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5★</div>
+        <div class="stat-label">Client Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-image-wrap">
+      <!-- ✏️ CHANGE IMAGE: replace img11.png with your hero image filename -->
+      <img src="hero-image2.png" alt="INBLINK Agency Showcase" class="hero-image">
+
+      <!-- Floating badge bottom-left: key stat -->
+      <div class="hero-image-badge">
+        <div class="hero-badge-icon">📈</div>
+        <div class="hero-badge-text">
+          <span class="hero-badge-val">$94K+</span>
+          <span class="hero-badge-label">Revenue Managed</span>
+        </div>
+      </div>
+
+      <!-- Floating badge top-right: live status -->
+      <div class="hero-image-badge-2">
+        <div class="hero-badge-2-dot"></div>
+        <span class="hero-badge-2-text">Available for Projects</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-content">
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify Optimization</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Amazon Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>CRO Strategy</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Email Automation</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AI Integration</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Analytics Setup</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify Optimization</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Amazon Growth</div>
+  </div>
+</div>
+
+<!-- SERVICES SECTION -->
 <section class="section" id="services">
   <div class="section-header">
-    <div class="section-label">OUR SERVICES</div>
-    <h2 class="section-title">Grow Your Revenue with Inblink Agency</h2>
-    <p class="section-desc">Whether you're starting from scratch, shifting your offline business online, or scaling an existing store — we handle everything end-to-end.</p>
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Services Built for Growth</h2>
+    <p class="section-desc">We specialize in ecommerce solutions that drive real revenue growth for your business.</p>
   </div>
 
   <div class="services-grid">
-
     <div class="service-card">
-      <div class="service-icon">🌐</div>
-      <h3 class="service-title">Shifting Your Business Online</h3>
-      <p class="service-desc">Feeling hesitant to sell your products online? We make the transition smooth and profitable. We move your local/offline business to a powerful online store that works 24/7 and reaches customers worldwide.</p>
+      <div class="service-icon">🛒</div>
+      <h3 class="service-title">Shopify Optimization</h3>
+      <p class="service-desc">Complete store setup, theme configuration, conversion optimization, and performance tracking.</p>
       <div class="service-tags">
-        <span class="tag">Business Digitization</span>
-        <span class="tag">Online Launch</span>
-        <span class="tag">Beginners Welcome</span>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">🛍️</div>
-      <h3 class="service-title">Shopify Store Creation</h3>
-      <p class="service-desc">We build beautiful, fast, and high-converting Shopify stores from scratch. Perfect for new businesses ready to start selling online professionally.</p>
-      <div class="service-tags">
-        <span class="tag">Full Store Setup</span>
-        <span class="tag">Theme Design</span>
-        <span class="tag">Payment Integration</span>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">⚡</div>
-      <h3 class="service-title">Shopify Store Optimization</h3>
-      <p class="service-desc">Already have a Shopify store but sales are low? We optimize speed, design, user experience, and conversion paths to dramatically boost your revenue.</p>
-      <div class="service-tags">
+        <span class="tag">Store Setup</span>
         <span class="tag">CRO</span>
-        <span class="tag">Speed Optimization</span>
-        <span class="tag">UX Improvements</span>
+        <span class="tag">Performance</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📧</div>
+      <h3 class="service-title">Email Marketing</h3>
+      <p class="service-desc">Klaviyo automation, abandoned cart recovery, welcome sequences, and retention campaigns.</p>
+      <div class="service-tags">
+        <span class="tag">Klaviyo</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Retention</span>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-icon">📦</div>
-      <h3 class="service-title">Store & Product Management</h3>
-      <p class="service-desc">We take full charge of your Shopify store operations — product uploads, inventory management, order processing, and daily maintenance so you don’t have to.</p>
+      <h3 class="service-title">Amazon Marketplace</h3>
+      <p class="service-desc">Listing optimization, keyword research, competitor analysis, and sales growth strategies.</p>
       <div class="service-tags">
-        <span class="tag">Product Listing</span>
-        <span class="tag">Inventory Control</span>
-        <span class="tag">Daily Operations</span>
+        <span class="tag">Listing Optimization</span>
+        <span class="tag">Keywords</span>
+        <span class="tag">Growth</span>
       </div>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🚀</div>
-      <h3 class="service-title">Dropshipping with Shopify</h3>
-      <p class="service-desc">Launch a profitable dropshipping business without holding inventory. We create your store, find winning products, connect suppliers, and manage everything for you.</p>
+      <div class="service-icon">📊</div>
+      <h3 class="service-title">Analytics & Reporting</h3>
+      <p class="service-desc">Data dashboards, performance tracking, custom reports, and actionable insights.</p>
       <div class="service-tags">
-        <span class="tag">Dropshipping Setup</span>
-        <span class="tag">Supplier Integration</span>
-        <span class="tag">Zero Inventory Risk</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Dashboards</span>
+        <span class="tag">Insights</span>
       </div>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">📈</div>
-      <h3 class="service-title">Amazon Store Creation & Management</h3>
-      <p class="service-desc">We set up and grow your Amazon FBA business — from store creation and listing optimization to inventory management and sales scaling on the world’s largest marketplace.</p>
+      <div class="service-icon">⭐</div>
+      <h3 class="service-title">Trust & Reviews</h3>
+      <p class="service-desc">Judge.me integration, review management, social proof implementation, and brand building.</p>
       <div class="service-tags">
-        <span class="tag">Amazon FBA</span>
-        <span class="tag">Listing SEO</span>
-        <span class="tag">Marketplace Growth</span>
+        <span class="tag">Reviews</span>
+        <span class="tag">Trust</span>
+        <span class="tag">Conversion</span>
       </div>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">💰</div>
-      <h3 class="service-title">Revenue Growth & Scaling</h3>
-      <p class="service-desc">Take your online business to the next level. We implement SEO, email marketing, advertising, and retention strategies to consistently multiply your revenue and profitability.</p>
+      <div class="service-icon">🤖</div>
+      <h3 class="service-title">AI Integration</h3>
+      <p class="service-desc">AI-powered product descriptions, content generation, automation, and smart recommendations.</p>
       <div class="service-tags">
-        <span class="tag">Advanced Strategies</span>
-        <span class="tag">Email Automation</span>
-        <span class="tag">Long-term Scaling</span>
+        <span class="tag">AI Tools</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Scaling</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- Keep the rest of your original HTML (Portfolio, CTA, Contact, Footer) here if you want the full file. For now, this focuses on the Services update. -->
+<!-- PORTFOLIO SECTION -->
+<section class="section portfolio-section" id="portfolio">
+  <div class="section-header">
+    <div class="section-label">Recent Work</div>
+    <h2 class="section-title">Projects & Results</h2>
+    <p class="section-desc">Real work delivered for ecommerce brands worldwide.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img1.jpg" alt="Shopify Dashboard Analytics">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Analytics</div>
+        <h4 class="portfolio-title">Sales Dashboard</h4>
+        <p class="portfolio-desc">Complete analytics setup with 45K transactions tracked.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img2.jpg" alt="Store Growth Analytics">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Growth</div>
+        <h4 class="portfolio-title">$137K Sales Growth</h4>
+        <p class="portfolio-desc">1,046% month-over-month growth tracking.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img3.jpg" alt="Finance Overview">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Finance</div>
+        <h4 class="portfolio-title">Annual Report</h4>
+        <p class="portfolio-desc">Full-year financial reporting with $94K revenue.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img4.jpg" alt="Traffic Dashboard">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Traffic</div>
+        <h4 class="portfolio-title">Store Traffic Analysis</h4>
+        <p class="portfolio-desc">$788K total sales with detailed funnel tracking.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img5.jpg" alt="Product Page CRO">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Conversion</div>
+        <h4 class="portfolio-title">Subscription Page</h4>
+        <p class="portfolio-desc">High-converting product page with upsell options.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img6.jpg" alt="Inventory Dashboard">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Inventory</div>
+        <h4 class="portfolio-title">Multi-Channel Inventory</h4>
+        <p class="portfolio-desc">20K+ SKUs managed across platforms.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img7.jpg" alt="Custom Reports">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Reporting</div>
+        <h4 class="portfolio-title">Custom Reports</h4>
+        <p class="portfolio-desc">Cohort analysis and inventory reporting setup.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img8.jpg" alt="Stock Taking">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Operations</div>
+        <h4 class="portfolio-title">Stock Management</h4>
+        <p class="portfolio-desc">Real-time inventory with barcode integration.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img9.jpg" alt="Inventory Planner">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Planning</div>
+        <h4 class="portfolio-title">Inventory Planner</h4>
+        <p class="portfolio-desc">Smart reorder recommendations for 2118 variants.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img10.jpg" alt="Amazon Listing">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Amazon</div>
+        <h4 class="portfolio-title">Marketplace Optimization</h4>
+        <p class="portfolio-desc">SEO-optimized product listings for Amazon.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img11.png" alt="Luxury Fashion Store">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Shopify</div>
+        <h4 class="portfolio-title">Luxury Fashion Store</h4>
+        <p class="portfolio-desc">Premium store with high-conversion product pages.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="img12.jpg" alt="Fashion Ecommerce">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Shopify</div>
+        <h4 class="portfolio-title">Fashion Ecommerce</h4>
+        <p class="portfolio-desc">Responsive store with clean navigation and UX.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<div class="cta-section" id="process">
+  <h2 class="cta-title">Ready to Scale Your Ecommerce?</h2>
+  <p class="cta-desc">Get a free consultation and discover how we can grow your revenue with proven strategies.</p>
+  <a href="#contact" class="btn btn-secondary" style="background: white; color: var(--primary); font-weight: 700;">Book Free Consultation →</a>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section contact-section" id="contact">
+  <div class="section-header">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-desc">Reach out through any channel below. We typically respond within 2 hours.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-cards">
+      <a href="mailto:inblinkofficial@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-content">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">inblinkofficial@gmail.com</div>
+        </div>
+      </a>
+
+      <a href="tel:+923349918283" class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-content">
+          <div class="contact-label">WhatsApp/Phone</div>
+          <div class="contact-value">+92 334 991 8283</div>
+        </div>
+      </a>
+
+      <a href="#" class="contact-card">
+        <div class="contact-icon">🎯</div>
+        <div class="contact-content">
+          <div class="contact-label">Fiverr</div>
+          <div class="contact-value">Hire Us on Fiverr</div>
+        </div>
+      </a>
+
+      <a href="#" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div class="contact-content">
+          <div class="contact-label">Upwork</div>
+          <div class="contact-value">Find Us on Upwork</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-info-header">
+        <div class="contact-info-logo">
+          <img src="logo.jpg" alt="INBLINK Logo">
+        </div>
+        <div>
+          <h3>INB<span style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LINK</span></h3>
+        </div>
+      </div>
+      <div class="contact-info-sub">Ecommerce Growth Agency</div>
+      <p class="contact-info-desc">
+        We specialize in helping Shopify and Amazon sellers grow revenue through strategic optimization, AI automation, and data-driven execution.
+      </p>
+      
+      <div class="hours-list">
+        <div class="hours-title">⏱ Availability</div>
+        <div class="hours-item">
+          <span>Monday - Saturday</span>
+          <span class="hours-time">9 AM - 10 PM PKT</span>
+        </div>
+        <div class="hours-item">
+          <span>Sunday</span>
+          <span class="hours-time">By Appointment</span>
+        </div>
+        <div class="hours-item">
+          <span>Response Time</span>
+          <span class="hours-time" style="color: var(--success);">~2 Hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <div class="footer-logo-section">
+        <div class="footer-logo">
+          <img src="logo.jpg" alt="INBLINK Logo">
+        </div>
+        <div class="footer-brand">
+          <div class="footer-brand-name">INBLINK</div>
+          <div class="footer-brand-sub">Ecommerce Agency</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Shopify Optimization</a></li>
+        <li><a href="#services">Email Marketing</a></li>
+        <li><a href="#services">Amazon Growth</a></li>
+        <li><a href="#services">Analytics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Shopify</a></li>
+        <li><a href="#">Amazon</a></li>
+        <li><a href="#">Klaviyo</a></li>
+        <li><a href="#">Judge.me</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 INBLINK Agency. All rights reserved.</span>
+    <span>Ecommerce Growth • Shopify Optimization • Amazon Marketplace</span>
+  </div>
+</footer>
+
+<script>
+  /* ══════════════════════════════════════════════
+     INBLINK THEME ENGINE  (OWNER USE — not visible to visitors)
+     ── How to apply a theme ──
+     1. Open this file in any text editor
+     2. Find  <html lang="en">  at the very top
+     3. Change it to e.g.  <html lang="en" class="theme-astra">
+     Available classes: theme-astra | theme-envato | theme-dawn | theme-sense | theme-custom
+     ── How to add a NEW theme ──
+     1. Copy any  html.theme-XXXX { }  CSS block in the <style> section
+     2. Rename the class and edit the variables
+     3. Apply by adding that class to <html>
+  ══════════════════════════════════════════════ */
+
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+
+  // Dark / Light toggle for visitors
+  const savedDark = localStorage.getItem('inblink-dark');
+  if (savedDark === 'dark') {
+    html.classList.add('dark-mode');
+    themeToggle.textContent = '☀️';
+  }
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark-mode');
+    const isDark = html.classList.contains('dark-mode');
+    localStorage.setItem('inblink-dark', isDark ? 'dark' : 'light');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
 
 </body>
 </html>
