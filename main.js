@@ -1,32 +1,20 @@
-// Mobile menu toggle
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+// Mobile menu
+const h = document.getElementById('hamburger');
+const m = document.getElementById('mobileMenu');
+if (h && m) h.addEventListener('click', () => m.classList.toggle('open'));
 
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
-}
-
-// Contact form — let formsubmit.co handle submission natively (no fetch intercept)
-// Just show loading state on the button
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', () => {
-    const btn = contactForm.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-    }
-  });
-}
-
-// Sticky header shadow on scroll
+// Sticky shadow
 window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
-  if (header) {
-    header.style.boxShadow = window.scrollY > 10
-      ? '0 4px 20px rgba(0,0,0,0.1)'
-      : '0 2px 12px rgba(0,0,0,0.06)';
-  }
+  const hdr = document.querySelector('.header');
+  if (hdr) hdr.style.boxShadow = window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.1)' : '0 2px 12px rgba(0,0,0,0.06)';
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+    if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+  });
 });
