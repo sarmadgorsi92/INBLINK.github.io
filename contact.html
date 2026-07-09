@@ -65,7 +65,7 @@
         <h1>CONTACT US</h1>
         <p class="contact-subtitle">We'll Get Back To You Within 24–48 Business Hours</p>
 
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST">
+        <form class="contact-form" action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST">
           <!-- Formsubmit.co config — no signup needed -->
           <input type="hidden" name="_subject" value="New Contact Request — INBLINK Website" />
           <input type="hidden" name="_captcha" value="false" />
@@ -135,10 +135,6 @@
           </div>
 
           <button type="submit" class="btn btn-primary btn-full">SUBMIT CONTACT REQUEST</button>
-
-          <div class="form-success" id="formSuccess">
-            ✅ Thank you! We'll get back to you within 24–48 hours.
-          </div>
         </form>
       </div>
     </div>
@@ -195,6 +191,15 @@
     </svg>
   </a>
 
-  <script src="main.js"></script>
+  <!-- Inline JS: mobile menu only — NO form interception -->
+  <script>
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    if (h && m) h.addEventListener('click', () => m.classList.toggle('open'));
+    window.addEventListener('scroll', () => {
+      const hdr = document.querySelector('.header');
+      if (hdr) hdr.style.boxShadow = window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.1)' : '';
+    });
+  </script>
 </body>
 </html>
