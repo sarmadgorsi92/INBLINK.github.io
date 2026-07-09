@@ -8,40 +8,15 @@ if (hamburger && mobileMenu) {
   });
 }
 
-// Contact form handler
+// Contact form — let formsubmit.co handle submission natively (no fetch intercept)
+// Just show loading state on the button
 const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  contactForm.addEventListener('submit', () => {
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' }
-      });
-
-      if (res.ok) {
-        contactForm.reset();
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-        }
-        btn.textContent = 'SUBMIT CONTACT REQUEST';
-        btn.disabled = false;
-      } else {
-        btn.textContent = 'Error — Try Again';
-        btn.disabled = false;
-      }
-    } catch {
-      // Fallback: redirect to mailto
-      window.location.href = 'mailto:inblinkofficial@gmail.com?subject=New Project Inquiry';
-      btn.textContent = 'SUBMIT CONTACT REQUEST';
-      btn.disabled = false;
+    if (btn) {
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
     }
   });
 }
