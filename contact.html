@@ -1,205 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | INBLINK Agency</title>
-  <meta name="description" content="Get in touch with INBLINK Agency. Book a free consultation for Shopify store setup, Amazon FBA, dropshipping, or ecommerce growth." />
+  <meta name="description" content="Get in touch with INBLINK Agency. Book a free consultation for Shopify, Amazon FBA, dropshipping or ecommerce growth." />
   <link rel="canonical" href="https://inblink.co/contact.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Plan selected banner */
+    .plan-banner {
+      background: linear-gradient(135deg, #1a6b2a, #2e8b40);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      display: none;
+      align-items: center;
+      gap: 14px;
+    }
+    .plan-banner.visible { display: flex; }
+    .plan-banner-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .plan-banner-text strong { display: block; font-size: 1rem; font-weight: 800; margin-bottom: 3px; }
+    .plan-banner-text p { font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 0; }
+    .plan-banner-close { margin-left: auto; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .plan-banner-close:hover { background: rgba(255,255,255,0.35); }
+  </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <img src="logo.jpg" alt="INBLINK Logo" class="logo-img" />
-        <span class="logo-text">INBLINK</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="nav-link nav-contact active">Contact</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a>
+<header class="header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="INBLINK Logo" class="logo-img" /><span class="logo-text">INBLINK</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a><a href="blog.html" class="nav-link">Blog</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
       <a href="contact.html" class="nav-link nav-contact active">Contact</a>
-    </div>
-  </header>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a><a href="blog.html" class="nav-link">Blog</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="contact.html" class="nav-link nav-contact active">Contact</a>
+  </div>
+</header>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-page">
-    <div class="contact-image-col">
-      <img src="hero-image2.png" alt="INBLINK ecommerce growth agency" />
-      <div class="contact-image-overlay">
-        <div class="contact-info-card">
-          <h3>Get In Touch</h3>
-          <p>We typically respond within 2 hours.</p>
-          <div class="contact-info-item">
-            <span>✉️</span>
-            <a href="mailto:inblinkofficial@gmail.com">inblinkofficial@gmail.com</a>
+<section class="contact-page">
+  <!-- LEFT IMAGE COL -->
+  <div class="contact-image-col">
+    <img src="hero-image2.png" alt="INBLINK ecommerce growth agency" />
+    <div class="contact-image-overlay">
+      <div class="contact-info-card">
+        <h3>Get In Touch</h3>
+        <p>We typically respond within 2 hours.</p>
+        <div class="contact-info-item"><span>✉️</span><a href="mailto:inblinkofficial@gmail.com">inblinkofficial@gmail.com</a></div>
+        <div class="contact-info-item"><span>📱</span><a href="https://wa.me/923349918283">+92 334 991 8283</a></div>
+        <div class="contact-info-item"><span>⏱</span><span>Mon–Sat: 9 AM – 10 PM PKT</span></div>
+        <div class="contact-info-item"><span>🌍</span><span>Working with clients worldwide</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM COL -->
+  <div class="contact-form-col">
+    <div class="contact-form-wrap">
+      <h1>CONTACT US</h1>
+      <p class="contact-subtitle">We'll Get Back To You Within 24–48 Business Hours</p>
+
+      <!-- PLAN SELECTED BANNER (shown when coming from pricing page) -->
+      <div class="plan-banner" id="planBanner">
+        <div class="plan-banner-icon">✅</div>
+        <div class="plan-banner-text">
+          <strong id="planBannerTitle">Plan Selected</strong>
+          <p id="planBannerDesc">Your selected plan has been added to your message below.</p>
+        </div>
+        <button class="plan-banner-close" onclick="document.getElementById('planBanner').classList.remove('visible')">✕</button>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST">
+        <input type="hidden" name="_subject" id="formSubject" value="New Contact Request — INBLINK Website" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://inblink.co/thank-you.html" />
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="selected_plan" id="selectedPlanField" value="" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="John *" required />
           </div>
-          <div class="contact-info-item">
-            <span>📱</span>
-            <a href="https://wa.me/923349918283">+92 334 991 8283</a>
-          </div>
-          <div class="contact-info-item">
-            <span>⏱</span>
-            <span>Mon–Sat: 9 AM – 10 PM PKT</span>
+          <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe *" required />
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="contact-form-col">
-      <div class="contact-form-wrap">
-        <h1>CONTACT US</h1>
-        <p class="contact-subtitle">We'll Get Back To You Within 24–48 Business Hours</p>
-
-        <form class="contact-form" action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST">
-          <!-- Formsubmit.co config — no signup needed -->
-          <input type="hidden" name="_subject" value="New Contact Request — INBLINK Website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://inblink.co/thank-you.html" />
-          <input type="text" name="_honey" style="display:none" />
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name <span class="required">*</span></label>
-              <input type="text" id="firstName" name="firstName" placeholder="John *" required />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name <span class="required">*</span></label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe *" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="johndoe@company.com *" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="e.g. +92 300 000 0000 *" required />
-          </div>
-
-          <div class="form-group">
-            <label for="service">What You Need? <span class="required">*</span></label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="traffic">I need more traffic to my website</option>
-              <option value="shopify-new">I want a new Shopify store</option>
-              <option value="shopify-opt">I want to optimize my existing store</option>
-              <option value="dropshipping">I want to start dropshipping</option>
-              <option value="amazon">I need Amazon FBA management</option>
-              <option value="management">I need store management services</option>
-              <option value="revenue">I want to scale my revenue</option>
-              <option value="other">Other / Not sure yet</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="budget">Project Budget <span class="required">*</span></label>
-            <select id="budget" name="budget" required>
-              <option value="" disabled selected>Select your budget</option>
-              <option value="under-500">Under $500</option>
-              <option value="500-1000">$500 – $1,000</option>
-              <option value="1000-3000">$1,000 – $3,000</option>
-              <option value="3000-5000">$3,000 – $5,000</option>
-              <option value="5000+">$5,000+</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country <span class="required">*</span></label>
-            <input type="text" id="country" name="country" placeholder="Your country *" required />
-          </div>
-
-          <div class="form-group">
-            <label for="website">Website <span class="optional">(optional)</span></label>
-            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Your Message <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project *" required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-full">SUBMIT CONTACT REQUEST</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="logo.jpg" alt="INBLINK Logo" class="logo-img" />
-        <strong>INBLINK</strong>
-        <p>Ecommerce Growth Agency</p>
-        <div class="footer-hours">
-          <span>⏱ Mon–Sat: 9 AM – 10 PM PKT</span><br />
-          <span>Sun: By Appointment</span>
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="johndoe@company.com *" required />
         </div>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html">Shopify Store Setup</a></li>
-          <li><a href="services.html">Amazon Store Management</a></li>
-          <li><a href="services.html">Dropshipping</a></li>
-          <li><a href="services.html">Revenue Growth</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Social Links</h4>
-        <ul>
-          <li><a href="https://www.linkedin.com/company/inblink-co/" target="_blank">LinkedIn</a></li>
-          <li><a href="https://web.facebook.com/InblinkOfficial" target="_blank">Facebook</a></li>
-          <li><a href="https://www.instagram.com/inblink0fficial/" target="_blank">Instagram</a></li>
-          <li><a href="https://youtube.com/@InblinkOfficial" target="_blank">YouTube</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 INBLINK Agency. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <!-- WHATSAPP BUTTON -->
-  <a href="https://wa.me/923349918283?text=Hi%20INBLINK%2C%20I%20would%20like%20to%20book%20an%20appointment" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28">
-      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.853l-.487-.289-5.01 1.194 1.24-4.878-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.866c-.398-.199-2.354-1.162-2.72-1.294-.366-.133-.632-.199-.898.199-.265.398-1.03 1.294-1.263 1.56-.232.265-.465.299-.863.1-.398-.199-1.68-.619-3.2-1.974-1.183-1.054-1.981-2.355-2.214-2.753-.232-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.898-2.165-1.23-2.963-.325-.78-.655-.674-.898-.686l-.764-.013c-.265 0-.697.1-.1063.498-.365.398-1.396 1.362-1.396 3.322 0 1.96 1.43 3.853 1.628 4.12.2.265 2.814 4.296 6.82 6.027.953.412 1.697.658 2.277.843.957.305 1.828.262 2.516.159.768-.115 2.354-.963 2.687-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/>
-    </svg>
-  </a>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. +92 300 000 0000 *" required />
+        </div>
 
-  <!-- Inline JS: mobile menu only — NO form interception -->
-  <script>
-    const h = document.getElementById('hamburger');
-    const m = document.getElementById('mobileMenu');
-    if (h && m) h.addEventListener('click', () => m.classList.toggle('open'));
-    window.addEventListener('scroll', () => {
-      const hdr = document.querySelector('.header');
-      if (hdr) hdr.style.boxShadow = window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.1)' : '';
-    });
-  </script>
+        <div class="form-group">
+          <label for="service">What You Need? <span class="required">*</span></label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="I need more traffic to my website">I need more traffic to my website</option>
+            <option value="I want a new Shopify store">I want a new Shopify store</option>
+            <option value="I want to optimize my existing store">I want to optimize my existing store</option>
+            <option value="I want to start dropshipping">I want to start dropshipping</option>
+            <option value="I need Amazon FBA management">I need Amazon FBA management</option>
+            <option value="I need store management services">I need store management services</option>
+            <option value="I want to scale my revenue">I want to scale my revenue</option>
+            <option value="Other">Other / Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Project Budget <span class="required">*</span></label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select your budget</option>
+            <option value="Under $500">Under $500</option>
+            <option value="$500 – $1,000">$500 – $1,000</option>
+            <option value="$1,000 – $3,000">$1,000 – $3,000</option>
+            <option value="$3,000 – $5,000">$3,000 – $5,000</option>
+            <option value="$5,000+">$5,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country <span class="required">*</span></label>
+          <input type="text" id="country" name="country" placeholder="Your country *" required />
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website <span class="optional">(optional)</span></label>
+          <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project *" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">SUBMIT CONTACT REQUEST</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><img src="logo.jpg" alt="INBLINK Logo" class="logo-img" /><strong>INBLINK</strong><p>Ecommerce Growth Agency</p><div class="footer-hours"><span>⏱ Mon–Sat: 9 AM – 10 PM PKT</span></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Shopify Store Setup</a></li><li><a href="services.html">Amazon FBA</a></li><li><a href="services.html">Dropshipping</a></li><li><a href="services.html">Revenue Scaling</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://www.linkedin.com/company/inblink-co/" target="_blank">LinkedIn</a></li><li><a href="https://web.facebook.com/InblinkOfficial" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/inblink0fficial/" target="_blank">Instagram</a></li><li><a href="mailto:inblinkofficial@gmail.com">Email Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 INBLINK Agency. All rights reserved.</p></div>
+</footer>
+
+<a href="https://wa.me/923349918283?text=Hi%20INBLINK" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.853l-.487-.289-5.01 1.194 1.24-4.878-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.866c-.398-.199-2.354-1.162-2.72-1.294-.366-.133-.632-.199-.898.199-.265.398-1.03 1.294-1.263 1.56-.232.265-.465.299-.863.1-.398-.199-1.68-.619-3.2-1.974-1.183-1.054-1.981-2.355-2.214-2.753-.232-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.898-2.165-1.23-2.963-.325-.78-.655-.674-.898-.686l-.764-.013c-.265 0-.697.1-.1063.498-.365.398-1.396 1.362-1.396 3.322 0 1.96 1.43 3.853 1.628 4.12.2.265 2.814 4.296 6.82 6.027.953.412 1.697.658 2.277.843.957.305 1.828.262 2.516.159.768-.115 2.354-.963 2.687-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/></svg></a>
+
+<script>
+  // Mobile menu
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  if (h && m) h.addEventListener('click', () => m.classList.toggle('open'));
+
+  // Scroll shadow
+  window.addEventListener('scroll', () => {
+    const hdr = document.querySelector('.header');
+    if (hdr) hdr.style.boxShadow = window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.1)' : '';
+  });
+
+  // Plan detection from URL
+  const planDescriptions = {
+    'Shopify+Starter+%E2%80%94+%24199': {
+      label: '🛍️ Shopify Starter Plan — $199 one-time',
+      desc: 'Store setup, up to 20 products, theme customization, payment integration, basic SEO.',
+      service: 'I want a new Shopify store',
+      budget: 'Under $500',
+      msgPrefix: 'I would like to proceed with the Shopify Starter Plan ($199 one-time).\n\n'
+    },
+    'Shopify+Growth+%E2%80%94+%24449': {
+      label: '🚀 Shopify Growth Plan — $449 one-time',
+      desc: 'Up to 100 products, premium theme, email marketing, abandoned cart, analytics, 30-day support.',
+      service: 'I want a new Shopify store',
+      budget: '$500 – $1,000',
+      msgPrefix: 'I would like to proceed with the Shopify Growth Plan ($449 one-time).\n\n'
+    },
+    'Shopify+Scale+%E2%80%94+%24899': {
+      label: '⚡ Shopify Scale Plan — $899 one-time',
+      desc: 'Unlimited products, custom pages, upsells, loyalty program, multi-currency, 60-day support.',
+      service: 'I want a new Shopify store',
+      budget: '$500 – $1,000',
+      msgPrefix: 'I would like to proceed with the Shopify Scale Plan ($899 one-time).\n\n'
+    },
+    'Basic+Care+%E2%80%94+%24149%2Fmo': {
+      label: '📦 Monthly Basic Care Plan — $149/month',
+      desc: 'Up to 50 orders managed, product updates, basic customer support, weekly reports.',
+      service: 'I need store management services',
+      budget: 'Under $500',
+      msgPrefix: 'I would like to subscribe to the Monthly Basic Care Plan ($149/month).\n\n'
+    },
+    'Full+Management+%E2%80%94+%24349%2Fmo': {
+      label: '💼 Monthly Full Management Plan — $349/month',
+      desc: 'Unlimited orders, daily inventory, full support, product research, email campaigns, bi-weekly calls.',
+      service: 'I need store management services',
+      budget: '$500 – $1,000',
+      msgPrefix: 'I would like to subscribe to the Monthly Full Management Plan ($349/month).\n\n'
+    },
+    'Enterprise+%E2%80%94+Custom': {
+      label: '🏢 Enterprise Plan — Custom Pricing',
+      desc: 'Dedicated account manager, multi-store management, custom integrations, priority 24/7 support.',
+      service: 'I need store management services',
+      budget: '$5,000+',
+      msgPrefix: 'I am interested in the Enterprise Plan (Custom Pricing) for high-volume store management.\n\n'
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const planParam = params.get('plan');
+
+  if (planParam) {
+    const decoded = decodeURIComponent(planParam).replace(/ /g, '+');
+    // Try to find matching plan
+    let planInfo = null;
+    for (const [key, val] of Object.entries(planDescriptions)) {
+      if (decodeURIComponent(key) === decodeURIComponent(planParam) || key === planParam) {
+        planInfo = val;
+        break;
+      }
+    }
+    // Fallback: try partial match
+    if (!planInfo) {
+      const raw = decodeURIComponent(planParam).replace(/\+/g, ' ');
+      for (const [key, val] of Object.entries(planDescriptions)) {
+        if (decodeURIComponent(key).replace(/\+/g, ' ').toLowerCase().includes(raw.toLowerCase().split('—')[0].trim().toLowerCase())) {
+          planInfo = val;
+          break;
+        }
+      }
+    }
+
+    if (planInfo) {
+      // Show banner
+      const banner = document.getElementById('planBanner');
+      document.getElementById('planBannerTitle').textContent = '✅ You selected: ' + planInfo.label;
+      document.getElementById('planBannerDesc').textContent = planInfo.desc;
+      banner.classList.add('visible');
+
+      // Update form subject
+      document.getElementById('formSubject').value = 'New Plan Inquiry: ' + planInfo.label.replace(/[🛍️🚀⚡📦💼🏢✅]/g, '').trim() + ' — INBLINK';
+
+      // Store plan in hidden field
+      document.getElementById('selectedPlanField').value = planInfo.label;
+
+      // Pre-select service dropdown
+      const svc = document.getElementById('service');
+      for (let i = 0; i < svc.options.length; i++) {
+        if (svc.options[i].value === planInfo.service) { svc.selectedIndex = i; break; }
+      }
+
+      // Pre-select budget
+      const bgt = document.getElementById('budget');
+      for (let i = 0; i < bgt.options.length; i++) {
+        if (bgt.options[i].value === planInfo.budget) { bgt.selectedIndex = i; break; }
+      }
+
+      // Pre-fill message
+      const msg = document.getElementById('message');
+      msg.value = planInfo.msgPrefix + 'Please let me know the next steps.';
+
+      // Scroll to form
+      setTimeout(() => banner.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+    }
+  }
+</script>
 </body>
 </html>
