@@ -10,36 +10,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="blog-post.css" />
+  <style>
+    /* Full-width footer override */
+    .footer { background: #111827; color: rgba(255,255,255,0.8); padding: 56px 0 0; }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 100%;
+      padding: 0 48px 48px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 18px 48px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+    @media(max-width:768px){
+      .footer-inner { grid-template-columns:1fr; padding:0 24px 32px; }
+      .footer-bottom { padding:16px 24px; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- HEADER -->
 <header class="header">
   <div class="container nav-container">
-    <a href="index.html" class="logo"><img src="logo.jpg" alt="INBLINK Logo" class="logo-img" /><span class="logo-text">INBLINK</span></a>
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="INBLINK Logo" class="logo-img" />
+      <span class="logo-text">INBLINK</span>
+    </a>
     <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a><a href="blog.html" class="nav-link active">Blog</a>
-      <a href="pricing.html" class="nav-link">Pricing</a><a href="contact.html" class="nav-link nav-contact">Contact</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link nav-contact">Contact</a>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a>
-    <a href="portfolio.html" class="nav-link">Portfolio</a><a href="blog.html" class="nav-link active">Blog</a>
-    <a href="pricing.html" class="nav-link">Pricing</a><a href="contact.html" class="nav-link nav-contact">Contact</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="blog.html" class="nav-link active">Blog</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="contact.html" class="nav-link nav-contact">Contact</a>
   </div>
 </header>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb-bar">
   <div class="container breadcrumb">
-    <a href="index.html">Home</a> <span>›</span> <a href="blog.html">Blog</a> <span>›</span> <span>Shopify vs Amazon: Which Platform in 2025?</span>
+    <a href="index.html">Home</a> <span>›</span>
+    <a href="blog.html">Blog</a> <span>›</span>
+    <span>Shopify vs Amazon 2025</span>
   </div>
 </div>
 
 <!-- POST HERO -->
 <section class="post-hero-section">
   <div class="container post-hero-inner">
-    <div class="post-category-tag">Dropshipping</div>
+    <div class="post-category-tag">Comparison</div>
     <h1>Shopify vs Amazon: Which Platform Is Better in 2025?</h1>
     <div class="post-meta-bar">
       <div class="post-author">
@@ -56,26 +91,28 @@
         <span>👁 487 views</span>
       </div>
     </div>
-    <!-- SOCIAL SHARE -->
     <div class="post-share-bar">
       <span class="share-label">Share:</span>
       <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">Facebook</a>
-      <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?url=https://inblink.co/blog-shopify-vs-amazon.html&text=Shopify+vs+Amazon+in+2025" target="_blank">Twitter/X</a>
+      <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?url=https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">Twitter/X</a>
       <a class="share-btn share-li" href="https://www.linkedin.com/shareArticle?mini=true&url=https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">LinkedIn</a>
-      <a class="share-btn share-wa" href="https://wa.me/?text=Shopify+vs+Amazon+in+2025+https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">WhatsApp</a>
-      <a class="share-btn share-em" href="mailto:?subject=Check this article&body=https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">Email</a>
+      <a class="share-btn share-wa" href="https://wa.me/?text=https://inblink.co/blog-shopify-vs-amazon.html" target="_blank">WhatsApp</a>
+      <a class="share-btn share-em" href="mailto:?subject=Check this article&body=https://inblink.co/blog-shopify-vs-amazon.html">Email</a>
     </div>
   </div>
 </section>
 
 <!-- FEATURED IMAGE -->
 <div class="container post-featured-img">
-  <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=960&q=80" alt="Social media marketing benefits for small businesses 2025" class="post-featured-image" />
+  <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=960&q=80"
+       alt="Shopify vs Amazon platform comparison 2025"
+       class="post-featured-image" />
 </div>
 
-<!-- POST BODY + SIDEBAR -->
+<!-- POST LAYOUT -->
 <div class="container post-layout">
-  <!-- MAIN CONTENT -->
+
+  <!-- ── MAIN ARTICLE ── -->
   <article class="post-article">
 
     <p class="post-intro">Shopify and Amazon are the two giants of ecommerce. But which one should you choose in 2025? This complete comparison breaks down costs, control, traffic, profits, and scalability to help you make the right decision for your business.</p>
@@ -88,79 +125,88 @@
     </div>
 
     <h2 id="pros-cons">Pros &amp; Cons Comparison</h2>
-    <table style="width:100%; border-collapse:collapse; margin:24px 0;">
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.93rem;">
       <thead>
-        <tr style="background:#f8fafc;">
-          <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Factor</th>
-          <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Shopify</th>
-          <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Amazon</th>
+        <tr style="background:#f0faf2;">
+          <th style="padding:12px;text-align:left;border:1px solid #d1d5db;color:#1a6b2a;">Factor</th>
+          <th style="padding:12px;text-align:left;border:1px solid #d1d5db;color:#1a6b2a;">Shopify</th>
+          <th style="padding:12px;text-align:left;border:1px solid #d1d5db;color:#1a6b2a;">Amazon</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Ownership</strong></td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">✅ Full brand ownership</td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">❌ Limited control</td>
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Ownership</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">✅ Full brand ownership</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">❌ Limited control</td>
+        </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Traffic</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">You build it yourself</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">Built-in (300M+ buyers)</td>
         </tr>
         <tr>
-          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Traffic Source</strong></td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">You build it</td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">Built-in (huge)</td>
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Fees</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">$29–$299/mo + transaction</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">15%+ referral + FBA fees</td>
+        </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Customization</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">High — full design control</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">Low — fixed templates</td>
         </tr>
         <tr>
-          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Fees</strong></td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">$29–$299/mo + transaction fees</td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">15%+ referral + FBA fees</td>
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Customer Data</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">✅ 100% yours</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">❌ Amazon owns it</td>
         </tr>
-        <tr>
-          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Customization</strong></td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">High</td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">Low</td>
-        </tr>
-        <tr>
-          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Customer Data</strong></td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">✅ Yours</td>
-          <td style="padding:12px; border:1px solid #e2e8f0;">❌ Amazon's</td>
+        <tr style="background:#f9fafb;">
+          <td style="padding:12px;border:1px solid #d1d5db;"><strong>Logistics</strong></td>
+          <td style="padding:12px;border:1px solid #d1d5db;">You manage or outsource</td>
+          <td style="padding:12px;border:1px solid #d1d5db;">✅ FBA handles everything</td>
         </tr>
       </tbody>
     </table>
 
     <h2 id="shopify-strengths">Shopify Strengths in 2025</h2>
     <ul>
-      <li><strong>Full Brand Control:</strong> Design your store exactly how you want. Build customer loyalty and email lists.</li>
-      <li><strong>Lower Long-term Fees:</strong> No heavy referral fees once you drive your own traffic.</li>
-      <li><strong>Flexibility:</strong> Sell physical products, digital downloads, subscriptions, or services.</li>
-      <li><strong>SEO & Marketing Freedom:</strong> Rank on Google, run Meta/TikTok ads without restrictions.</li>
-      <li><strong>Multi-channel Selling:</strong> Easily connect to Amazon, eBay, Walmart, and social platforms.</li>
+      <li><strong>Full Brand Control:</strong> Design your store exactly how you want. Build customer loyalty and email lists you own forever.</li>
+      <li><strong>Lower Long-term Fees:</strong> No heavy referral fees once you drive consistent traffic — better margins at scale.</li>
+      <li><strong>Flexibility:</strong> Sell physical products, digital downloads, subscriptions, or services all in one place.</li>
+      <li><strong>SEO & Marketing Freedom:</strong> Rank on Google, run Meta/TikTok ads, and build retargeting audiences without restrictions.</li>
+      <li><strong>Multi-channel Selling:</strong> Easily sync inventory and sell on Amazon, eBay, Walmart, and social platforms from Shopify.</li>
     </ul>
 
     <h2 id="amazon-strengths">Amazon Strengths in 2025</h2>
     <ul>
-      <li><strong>Instant Traffic:</strong> Access to hundreds of millions of buyers actively searching to buy.</li>
-      <li><strong>FBA Logistics:</strong> Amazon handles storage, packing, shipping, and customer service.</li>
-      <li><strong>Prime Advantage:</strong> Eligible products get massive visibility and trust.</li>
-      <li><strong>Fast Scaling:</strong> Easier to test products and scale winners quickly.</li>
+      <li><strong>Instant Traffic:</strong> Access to 300M+ active buyers who are already searching to buy — no ad spend required to get started.</li>
+      <li><strong>FBA Logistics:</strong> Amazon handles storage, packing, shipping, returns, and customer service for you completely.</li>
+      <li><strong>Prime Advantage:</strong> FBA products get Prime badge — massive visibility boost and built-in customer trust.</li>
+      <li><strong>Fast Product Validation:</strong> List a product today and get sales within days — much faster than building a Shopify store from scratch.</li>
     </ul>
 
     <h2 id="costs">Cost Breakdown 2025</h2>
-    <p><strong>Shopify:</strong> $29/month (Basic) + 2% transaction fees (or less with Shopify Payments) + apps + ads.</p>
-    <p><strong>Amazon:</strong> 15% referral fee + FBA fulfillment fees + storage fees + PPC ads. Can easily reach 30–40% total fees.</p>
-    <p><strong>Winner:</strong> Shopify has better margins once you have consistent traffic.</p>
+    <p><strong>Shopify:</strong> $29/month (Basic plan) + 2.9% transaction fees (waived with Shopify Payments) + app costs + paid ads. Total: $100–$500/month to run properly.</p>
+    <p><strong>Amazon:</strong> $39.99/month Professional plan + 15% referral fee on every sale + FBA fulfilment fees ($3–$5 per unit) + PPC ads. Total fees can reach 30–40% of revenue.</p>
+
+    <div class="post-highlight-box">
+      <strong>📌 Verdict on Costs:</strong> Shopify has significantly better margins once you have consistent traffic. Amazon fees compound quickly at scale and eat into profits heavily.
+    </div>
 
     <h2 id="who-should-choose">Who Should Choose Which?</h2>
     <p><strong>Choose Shopify if you want to:</strong></p>
     <ul>
-      <li>Build a long-term brand</li>
-      <li>Own your customer data</li>
-      <li>Have full design control</li>
-      <li>Sell unique or high-margin products</li>
+      <li>Build a long-term recognizable brand</li>
+      <li>Own your customer email list and data</li>
+      <li>Have full design and marketing control</li>
+      <li>Sell unique, high-margin, or branded products</li>
+      <li>Run dropshipping or subscription box models</li>
     </ul>
     <p><strong>Choose Amazon if you want to:</strong></p>
     <ul>
-      <li>Validate products quickly</li>
-      <li>Focus only on fulfillment (use FBA)</li>
-      <li>Sell commodity products</li>
-      <li>Get fast sales with minimal marketing</li>
+      <li>Validate product demand quickly without building an audience</li>
+      <li>Outsource fulfilment completely via FBA</li>
+      <li>Sell commodity or high-demand products</li>
+      <li>Get fast sales without heavy marketing investment</li>
     </ul>
 
     <div class="post-cta-box">
@@ -169,12 +215,13 @@
       <a href="pricing.html" class="btn btn-primary">View Our Ecommerce Plans →</a>
     </div>
 
-    <h2 id="hybrid">The Hybrid Approach (Recommended)</h2>
-    <p>Smart brands in 2025 use both: Build your brand on Shopify and expand reach via Amazon FBA. This gives you the best of both worlds — brand ownership + massive traffic.</p>
+    <h2 id="hybrid">The Hybrid Approach (Recommended for 2025)</h2>
+    <p>Smart brands in 2025 don't choose one — they use both strategically. Build your brand on Shopify for long-term growth, customer ownership, and higher margins. Use Amazon FBA to tap into instant demand, validate new products, and reach buyers who'd never find you otherwise.</p>
+    <p>Tools like Linnworks, Sellbrite, or Shopify's Amazon channel make managing both from one dashboard straightforward once you're at scale.</p>
 
     <h2 id="conclusion">Conclusion</h2>
-    <p>Shopify gives you freedom and higher long-term profits. Amazon gives you speed and built-in demand. Your choice depends on your goals. Most serious sellers eventually use both platforms.</p>
-    <p>If you want professional help launching a high-converting Shopify store or optimizing your Amazon presence, INBLINK’s team can handle everything end-to-end.</p>
+    <p>Shopify gives you freedom, brand ownership, and higher long-term profits. Amazon gives you speed, built-in demand, and logistics simplicity. Your choice depends entirely on your business goals and current stage.</p>
+    <p>If you're starting out and want fast sales — Amazon. If you want to build something lasting that you own — Shopify. If you're serious about ecommerce — eventually both.</p>
 
     <!-- TAGS -->
     <div class="post-tags">
@@ -199,11 +246,11 @@
       </div>
     </div>
 
-    <!-- NEWSLETTER -->
+    <!-- NEWSLETTER — ONE ONLY, after author box -->
     <div class="post-newsletter">
       <div class="newsletter-icon">📬</div>
       <h3>Subscribe to Our Newsletter</h3>
-      <p>Get free ecommerce tips, Shopify strategies, and growth guides delivered to your inbox every week. No spam — unsubscribe anytime.</p>
+      <p>Get free ecommerce tips, Shopify strategies, and growth guides delivered every week. No spam — unsubscribe anytime.</p>
       <form class="newsletter-form" action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Newsletter Signup — INBLINK Blog" />
         <input type="hidden" name="_captcha" value="false" />
@@ -216,42 +263,13 @@
         </div>
       </form>
     </div>
-
-    <!-- RELATED POSTS -->
-    <div class="post-related">
-      <h3>Related Articles</h3>
-      <div class="related-grid">
-        <a href="blog-shopify-guide.html" class="related-card">
-          <div class="related-img">🛍️</div>
-          <div class="related-info">
-            <span class="related-cat">Shopify</span>
-            <h4>How to Start a Shopify Store in 2025</h4>
-            <span class="related-date">June 2025</span>
-          </div>
-        </a>
-        <a href="blog-amazon-fba.html" class="related-card">
-          <div class="related-img">🚀</div>
-          <div class="related-info">
-            <span class="related-cat">Amazon</span>
-            <h4>Amazon FBA for Beginners</h4>
-            <span class="related-date">April 2025</span>
-          </div>
-        </a>
-        <a href="blog-dropshipping-zero.html" class="related-card">
-          <div class="related-img">🌍</div>
-          <div class="related-info">
-            <span class="related-cat">Dropshipping</span>
-            <h4>How to Start Dropshipping With Zero Investment</h4>
-            <span class="related-date">February 2025</span>
-          </div>
-        </a>
-      </div>
-    </div>
+    <!-- END: no more repeated sections below -->
 
   </article>
 
-  <!-- SIDEBAR -->
+  <!-- ── RIGHT SIDEBAR ── -->
   <aside class="post-sidebar">
+
     <!-- TABLE OF CONTENTS -->
     <div class="sidebar-widget toc-widget">
       <h4>Table of Contents</h4>
@@ -271,68 +289,136 @@
     <div class="sidebar-widget sidebar-cta">
       <div class="sidebar-cta-icon">⚖️</div>
       <h4>Need Expert Guidance?</h4>
-      <p>Let us build your Shopify store or optimize your Amazon account. Starting from $199.</p>
+      <p>Let us build your Shopify store or manage your Amazon account. Starting from $199.</p>
       <a href="pricing.html" class="btn btn-primary btn-full" style="margin-top:16px;">See Plans & Pricing</a>
       <a href="contact.html" class="btn btn-outline btn-full" style="margin-top:10px;">Get Free Consultation</a>
     </div>
 
-    <!-- RECENT POSTS -->
+    <!-- RELATED ARTICLES — right side only, removed from article bottom -->
     <div class="sidebar-widget">
-      <h4>Recent Articles</h4>
+      <h4>Related Articles</h4>
       <div class="sidebar-posts">
         <a href="blog-shopify-guide.html" class="sidebar-post">
-          <div class="sidebar-post-icon">🛍️</div>
-          <div><div class="sidebar-post-title">How to Start a Shopify Store in 2025</div><div class="sidebar-post-date">June 2025</div></div>
+          <div class="sidebar-post-icon">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=80&q=80" alt="Shopify Guide" />
+          </div>
+          <div>
+            <div class="sidebar-post-title">How to Start a Shopify Store in 2025</div>
+            <div class="sidebar-post-date">June 2025</div>
+          </div>
         </a>
         <a href="blog-amazon-fba.html" class="sidebar-post">
-          <div class="sidebar-post-icon">🚀</div>
-          <div><div class="sidebar-post-title">Amazon FBA for Beginners</div><div class="sidebar-post-date">April 2025</div></div>
-        </a>
-        <a href="blog-cro-tips.html" class="sidebar-post">
-          <div class="sidebar-post-icon">💰</div>
-          <div><div class="sidebar-post-title">7 Ways to Boost Conversion Rate</div><div class="sidebar-post-date">March 2025</div></div>
+          <div class="sidebar-post-icon">
+            <img src="https://images.unsplash.com/photo-1642052503083-bc49dd433478?w=80&q=80" alt="Amazon FBA" />
+          </div>
+          <div>
+            <div class="sidebar-post-title">Amazon FBA for Beginners: How to Launch</div>
+            <div class="sidebar-post-date">April 2025</div>
+          </div>
         </a>
         <a href="blog-dropshipping-zero.html" class="sidebar-post">
-          <div class="sidebar-post-icon">🌍</div>
-          <div><div class="sidebar-post-title">Start Dropshipping With Zero Investment</div><div class="sidebar-post-date">February 2025</div></div>
+          <div class="sidebar-post-icon">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=80&q=80" alt="Dropshipping" />
+          </div>
+          <div>
+            <div class="sidebar-post-title">Start Dropshipping With Zero Investment</div>
+            <div class="sidebar-post-date">February 2026</div>
+          </div>
+        </a>
+        <a href="blog-cro-tips.html" class="sidebar-post">
+          <div class="sidebar-post-icon">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=80&q=80" alt="CRO Tips" />
+          </div>
+          <div>
+            <div class="sidebar-post-title">7 Ways to Boost Your Conversion Rate</div>
+            <div class="sidebar-post-date">March 2025</div>
+          </div>
+        </a>
+        <a href="why-inblink.html" class="sidebar-post">
+          <div class="sidebar-post-icon">
+            <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=80&q=80" alt="INBLINK Strategies" />
+          </div>
+          <div>
+            <div class="sidebar-post-title">INBLINK Marketing Strategies for Growth</div>
+            <div class="sidebar-post-date">November 2025</div>
+          </div>
         </a>
       </div>
     </div>
 
-    <!-- SIDEBAR NEWSLETTER -->
-    <div class="sidebar-widget sidebar-newsletter">
-      <h4>📬 Free Newsletter</h4>
-      <p>Weekly ecommerce tips straight to your inbox.</p>
-      <form action="https://formsubmit.co/inblinkofficial@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
-        <input type="hidden" name="_subject" value="Newsletter Signup — Sidebar" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://inblink.co/thank-you.html" />
-        <input type="email" name="email" placeholder="Your email" required style="padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-family:inherit;font-size:0.9rem;outline:none;" />
-        <button type="submit" class="btn btn-primary btn-full">Subscribe →</button>
-      </form>
-    </div>
   </aside>
-</div>
+  <!-- END SIDEBAR — newsletter removed from here -->
 
-<!-- BOTTOM CTA -->
+</div>
+<!-- END post-layout -->
+
+<!-- BOTTOM CTA BAND -->
 <section class="cta-band" style="margin-top:60px;">
   <div class="container cta-band-inner">
-    <div><h2>Ready to grow your ecommerce business?</h2><p>Whether Shopify, Amazon, or both — INBLINK will build and scale it for you.</p></div>
+    <div>
+      <h2>Ready to grow your ecommerce business?</h2>
+      <p>Whether Shopify, Amazon, or both — INBLINK will build and scale it for you.</p>
+    </div>
     <a href="contact.html" class="btn btn-white">Start Your Project →</a>
   </div>
 </section>
 
+<!-- FOOTER — full horizontal width, no container -->
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand"><img src="logo.jpg" alt="INBLINK Logo" class="logo-img" /><strong>INBLINK</strong><p>Ecommerce Growth Agency</p><div class="footer-hours"><span>⏱ Mon–Sat: 9 AM – 10 PM PKT</span></div></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Shopify Store Setup</a></li><li><a href="services.html">Amazon FBA</a></li><li><a href="services.html">Dropshipping</a></li><li><a href="services.html">Revenue Scaling</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://www.linkedin.com/company/inblink-co/" target="_blank">LinkedIn</a></li><li><a href="https://web.facebook.com/InblinkOfficial" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/inblink0fficial/" target="_blank">Instagram</a></li><li><a href="mailto:inblinkofficial@gmail.com">Email Us</a></li></ul></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.jpg" alt="INBLINK Logo" class="logo-img" style="width:44px;height:44px;border-radius:8px;margin-bottom:10px;" />
+      <strong style="font-size:1.2rem;color:#fff;display:block;margin-bottom:4px;">INBLINK</strong>
+      <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);">Ecommerce Growth Agency</p>
+      <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-top:8px;">Helping brands sell more online since 2019.</p>
+      <div style="margin-top:14px;font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.8;">
+        <span>⏱ Mon–Sat: 9 AM – 10 PM PKT</span><br/>
+        <span>Sun: By Appointment</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Shopify Store Setup</a></li>
+        <li><a href="services.html">Amazon FBA</a></li>
+        <li><a href="services.html">Dropshipping</a></li>
+        <li><a href="services.html">Store Optimization</a></li>
+        <li><a href="services.html">Revenue Scaling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/inblink-co/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://web.facebook.com/InblinkOfficial" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/inblink0fficial/" target="_blank">Instagram</a></li>
+        <li><a href="https://youtube.com/@InblinkOfficial" target="_blank">YouTube</a></li>
+        <li><a href="mailto:inblinkofficial@gmail.com">Email Us</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><p>© 2025 INBLINK Agency. All rights reserved.</p></div>
+  <div class="footer-bottom">
+    <p>© 2025 INBLINK Agency. All rights reserved. | Shopify • Amazon • Dropshipping • Revenue Growth</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/923349918283?text=Hi%20INBLINK" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.853l-.487-.289-5.01 1.194 1.24-4.878-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.866c-.398-.199-2.354-1.162-2.72-1.294-.366-.133-.632-.199-.898.199-.265.398-1.03 1.294-1.263 1.56-.232.265-.465.299-.863.1-.398-.199-1.68-.619-3.2-1.974-1.183-1.054-1.981-2.355-2.214-2.753-.232-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.898-2.165-1.23-2.963-.325-.78-.655-.674-.898-.686l-.764-.013c-.265 0-.697.1-.1063.498-.365.398-1.396 1.362-1.396 3.322 0 1.96 1.43 3.853 1.628 4.12.2.265 2.814 4.296 6.82 6.027.953.412 1.697.658 2.277.843.957.305 1.828.262 2.516.159.768-.115 2.354-.963 2.687-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/></svg></a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/923349918283?text=Hi%20INBLINK" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.853l-.487-.289-5.01 1.194 1.24-4.878-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.866c-.398-.199-2.354-1.162-2.72-1.294-.366-.133-.632-.199-.898.199-.265.398-1.03 1.294-1.263 1.56-.232.265-.465.299-.863.1-.398-.199-1.68-.619-3.2-1.974-1.183-1.054-1.981-2.355-2.214-2.753-.232-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.898-2.165-1.23-2.963-.325-.78-.655-.674-.898-.686l-.764-.013c-.265 0-.697.1-.1063.498-.365.398-1.396 1.362-1.396 3.322 0 1.96 1.43 3.853 1.628 4.12.2.265 2.814 4.296 6.82 6.027.953.412 1.697.658 2.277.843.957.305 1.828.262 2.516.159.768-.115 2.354-.963 2.687-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
 <script src="main.js"></script>
 </body>
 </html>
